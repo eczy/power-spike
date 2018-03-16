@@ -5,7 +5,7 @@ using InControl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenuController : MonoBehaviour {
+public class MainMenuManager : MonoBehaviour {
 
 	public Button[] buttons;
 	public string[] scene_names;

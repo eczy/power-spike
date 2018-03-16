@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54095894964657200}
   - component: {fileID: 135794387633502328}
   - component: {fileID: 95304020067879526}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: right_fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4571152408532730}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: fist_container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 54055413981681638}
   - component: {fileID: 114984756008772962}
   - component: {fileID: 114208464812442520}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 54555544694504188}
   - component: {fileID: 135589761874393164}
   - component: {fileID: 95898215466123086}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: left_fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c1581199db6163543aa22d8ac860f3db, type: 2}
+  - {fileID: 2100000, guid: 2b72e87a8f069471d93555faac5ff6c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,7 +192,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c1581199db6163543aa22d8ac860f3db, type: 2}
+  - {fileID: 2100000, guid: 2b72e87a8f069471d93555faac5ff6c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -226,7 +226,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d305ef2fc56ed8468c77175160a2162, type: 2}
+  - {fileID: 2100000, guid: e566f250ae20643c2bb04be81d401445, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,7 +274,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836290090692342}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 10
   m_UseGravity: 1
@@ -361,7 +361,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: f15b19f5871f3f946a02b39e0a6f4ff0, type: 2}
+  - {fileID: 2100000, guid: 1c2d43e7de599473cb308a3ccd9fa4e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -454,7 +454,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: f15b19f5871f3f946a02b39e0a6f4ff0, type: 2}
+  - {fileID: 2100000, guid: 1c2d43e7de599473cb308a3ccd9fa4e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -630,7 +630,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836290090692342}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 743e82ea9e90d4b35bcfaf5ee24ead01, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5

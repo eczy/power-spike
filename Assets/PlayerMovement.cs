@@ -33,11 +33,12 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	void Awake() {
-		rb = this.GetComponent<Rigidbody>();
+		p = GetComponent<Player> ();
+		rb = GetComponent<Rigidbody>();
 	}
 
 	void Update() {
-		if (Input.GetButtonDown("Jump")) {
+		if (p.device.Action1.WasPressed) {
 			jumpBuffer = maxJumpBuffer;
 		}
 	}
@@ -46,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 velocity = rb.velocity;
 
 		// Horizontal
-		float xInput = Input.GetAxisRaw("Horizontal");
+		float xInput = p.device.LeftStickX;
 		float targetSpeed = xInput * maxSpeed;
 		float xDiff = targetSpeed - velocity.x;
 		float thisAcceleration = acceleration * accelerationMultiplierByDist.Evaluate(Mathf.Abs(xDiff / maxSpeed));
@@ -61,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
 		float jumpPower = 2 * jumpHeight / jumpTime;
 		float gravity = -2 * jumpHeight / (jumpTime * jumpTime);
 		gravity *= gravityModifierBySpeed.Evaluate(velocity.y / jumpPower);
-		if (!Input.GetButton("Jump") && velocity.y > variableJumpCutoffSpeed) {
+		if (!p.device.Action1.IsPressed && velocity.y > variableJumpCutoffSpeed) {
 			gravity *= 5;
 		}
 		velocity.y += gravity * Time.deltaTime;
@@ -69,7 +70,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		// Jump
 		if (jumpBuffer > 0 && groundedBuffer > 0) {
-			Debug.Log ("Jump");
 			velocity.y = jumpPower;
 			jumpBuffer = 0;
 			groundedBuffer = 0;
