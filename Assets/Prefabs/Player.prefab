@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 95304020067879526}
   - component: {fileID: 114982589576170244}
   - component: {fileID: 114924217390631888}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: right_fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 114208464812442520}
   - component: {fileID: 114281004862664650}
   - component: {fileID: 114425791634237340}
+  - component: {fileID: 114788939614051548}
+  - component: {fileID: 114446829622212236}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -121,7 +123,7 @@ GameObject:
   - component: {fileID: 95898215466123086}
   - component: {fileID: 114511934239093774}
   - component: {fileID: 114377981441702416}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: left_fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1836290090692342}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9, y: 1.5, z: 0}
+  m_LocalPosition: {x: -0.2257967, y: 1.5, z: 0.006259918}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4571152408532730}
@@ -205,7 +207,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1126020434863426}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4571152408532730}
@@ -631,20 +633,26 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   jumpTime: 0.5
-  jumpHeight: 2.5
-  maxFallSpeed: 5
+  jumpHeight: 4
+  maxFallSpeed: 15
   gravityModifierBySpeed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0.9995308
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5041204
+      value: 0.5995461
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
       time: 1
-      value: 1
+      value: 0.9995308
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -703,6 +711,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 1
+--- !u!114 &114446829622212236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836290090692342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d40a6baef5847f2bae1336973122b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibility_time: 1
 --- !u!114 &114511934239093774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -715,6 +735,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &114788939614051548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836290090692342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c0da2459126412994693e9b2c0c47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabBuffer: 0.2
 --- !u!114 &114924217390631888
 MonoBehaviour:
   m_ObjectHideFlags: 1

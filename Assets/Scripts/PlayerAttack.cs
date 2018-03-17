@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour {
 	public float punch_speed = 1f;
 	public float punch_recovery_time = 1f;
 	public float punch_damage = 1f;
+    public float punch_distance = 1f;
 
 	Rigidbody rb;
 	Player p;
@@ -45,6 +46,7 @@ public class PlayerAttack : MonoBehaviour {
 		if (p.device.RightTrigger.WasPressed && !punching) {
 			StartCoroutine (Punch ());
 		}
+        punch_target.transform.position = transform.position + new Vector3(p.device.LeftStickX, p.device.LeftStickY, 0).normalized * punch_distance;
 	}
 
 	IEnumerator ChargeAttack(){
