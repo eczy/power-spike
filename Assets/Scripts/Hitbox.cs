@@ -18,6 +18,11 @@ public class Hitbox : MonoBehaviour {
 		
 	}
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        OnCollisionStay(collision);
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if (invincible)
@@ -37,7 +42,7 @@ public class Hitbox : MonoBehaviour {
             }
             if (knock != null)
             {
-                knock.Knock(collision.contacts[0].normal);
+                knock.Knock(collision.contacts[0].point);
             }
         }
     }

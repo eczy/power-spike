@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 114425791634237340}
   - component: {fileID: 114788939614051548}
   - component: {fileID: 114446829622212236}
+  - component: {fileID: 114355056694035688}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -676,7 +677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge_system: {fileID: 198598989565806356}
   charge_duration: 1
-  charge_force: 40
+  charge_force: 15
   cooldown: 1
   left: {fileID: 114377981441702416}
   right: {fileID: 114982589576170244}
@@ -684,6 +685,21 @@ MonoBehaviour:
   punch_speed: 0.1
   punch_recovery_time: 0.2
   punch_damage: 1
+  punch_distance: 2
+--- !u!114 &114355056694035688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836290090692342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59ca3fec3f43fd4b9c7280b808d9234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockback_force: 10
+  explosion_radius: 1
+  upwards_modifier: 1
 --- !u!114 &114377981441702416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -894,7 +910,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1355486871
+  randomSeed: 1696631123
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -942,7 +958,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -3
+      scalar: -4
       minScalar: 5
       maxCurve:
         serializedVersion: 2

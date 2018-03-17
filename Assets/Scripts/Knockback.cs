@@ -5,6 +5,8 @@ using UnityEngine;
 public class Knockback : MonoBehaviour {
 
     public float knockback_force = 1f;
+    public float explosion_radius = 1f;
+    public float upwards_modifier = 1f;
 
     Rigidbody rb;
 
@@ -18,8 +20,8 @@ public class Knockback : MonoBehaviour {
 		
 	}
 
-    public void Knock(Vector3 direction)
+    public void Knock(Vector3 position)
     {
-        rb.AddForce(direction * knockback_force, ForceMode.Impulse);
+        rb.AddExplosionForce(knockback_force, position, explosion_radius, upwards_modifier, ForceMode.Impulse);
     }
 }

@@ -46,7 +46,8 @@ public class PlayerAttack : MonoBehaviour {
 		if (p.device.RightTrigger.WasPressed && !punching) {
 			StartCoroutine (Punch ());
 		}
-        punch_target.transform.position = transform.position + new Vector3(p.device.LeftStickX, p.device.LeftStickY, 0).normalized * punch_distance;
+        if (p.device.LeftStick.X * p.device.LeftStick.Y != 0.0f)
+            punch_target.transform.position = transform.position + new Vector3(p.device.LeftStickX, p.device.LeftStickY, 0).normalized * punch_distance;
 	}
 
 	IEnumerator ChargeAttack(){
@@ -63,7 +64,7 @@ public class PlayerAttack : MonoBehaviour {
 			Charge hit_charge = hit.GetComponent<Charge> ();
 
 			if (rb != null) {
-				rb.AddExplosionForce (charge_force * Mathf.Sign(charge.charge * hit_charge.charge), transform.position, charge_system.shape.radius, 0.0f, ForceMode.Impulse);
+				rb.AddExplosionForce (charge_force * Mathf.Sign(charge.charge * hit_charge.charge), transform.position, 0, 0.0f, ForceMode.Impulse);
 			}
 		}
 
