@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4787404070299728}
   - component: {fileID: 33067238630502928}
-  - component: {fileID: 136026150931519962}
   - component: {fileID: 23850396780006272}
   m_Layer: 0
   m_Name: bodyTop
@@ -38,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4271460665197490}
   - component: {fileID: 33386130872032458}
-  - component: {fileID: 136679507934046984}
   - component: {fileID: 23805049348902036}
   m_Layer: 0
   m_Name: tip
@@ -55,6 +53,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4336195326040340}
+  - component: {fileID: 65075214176453274}
+  - component: {fileID: 114535789267444392}
   m_Layer: 0
   m_Name: battery
   m_TagString: Untagged
@@ -71,7 +71,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4665334922048758}
   - component: {fileID: 33277848922352250}
-  - component: {fileID: 136644895707951276}
   - component: {fileID: 23037946247748272}
   m_Layer: 0
   m_Name: body
@@ -100,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1417532256709096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665334922048758}
@@ -258,42 +257,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1259518501481852}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &136026150931519962
-CapsuleCollider:
+--- !u!65 &65075214176453274
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222255083569664}
+  m_GameObject: {fileID: 1417532256709096}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136644895707951276
-CapsuleCollider:
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.44, z: 1}
+  m_Center: {x: 0, y: 0.31, z: 0}
+--- !u!114 &114535789267444392
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1475836785827778}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1417532256709096}
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136679507934046984
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1259518501481852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3871dcd2326a8405bbf8cf0af787e001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5

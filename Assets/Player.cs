@@ -13,7 +13,6 @@ public class Player : MonoBehaviour {
 		} else {
 			device = null;
 		}
-		Debug.Log (InputManager.Devices.Count);
 	}
 
 	void Update () {
