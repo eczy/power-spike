@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
 		velocity.x += xStep;
 
 		if(xInput != 0)
-			transform.forward = new Vector3 (xInput, 0, 0);
+			transform.forward = new Vector3(xInput, 0, 0);
 
 		// Gravity
 		float jumpPower = 2 * jumpHeight / jumpTime;

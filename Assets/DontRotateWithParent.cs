@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChargeAttack : MonoBehaviour {
+public class DontRotateWithParent: MonoBehaviour {
 
 	Quaternion rot;
 
