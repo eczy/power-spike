@@ -37,6 +37,8 @@ public class BatteryGoal : MonoBehaviour {
 		}
 		else if (collector && collector.CanGrab()) {
 			Battery battery = RemoveBattery ();
+			if (battery == null)
+				return;
 			collector.TakeBattery (battery);
 		}
 	}
@@ -48,6 +50,8 @@ public class BatteryGoal : MonoBehaviour {
 	}
 
 	Battery RemoveBattery() {
+		if (currentBatteries == 0)
+			return null;
 		currentBatteries -= 1;
 		return Instantiate (batteryPrefab).GetComponent<Battery>();
 	}

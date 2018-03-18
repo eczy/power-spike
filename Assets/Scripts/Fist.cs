@@ -34,6 +34,8 @@ public class Fist : MonoBehaviour {
 		hurt.damage = damage;
 		anim.enabled = false;
 		coll.enabled = true;
+		yield return null;
+
 		float t = 0;
 		Vector3 start_pos = transform.localPosition;
 		Vector3 target_pos = target.transform.localPosition;

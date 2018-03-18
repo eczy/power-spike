@@ -9,6 +9,7 @@ public class PlayerSelect : MonoBehaviour {
 	public float radius = 1f;
 	public RectTransform[] player_buttons;
 	public RectTransform[] player_select_areas;
+	public bool auto_select = false;
 	[Header("Order: red pos, red neg, blue pos, blue neg")]
 	public Player[] players;
 
@@ -31,6 +32,13 @@ public class PlayerSelect : MonoBehaviour {
 		selections = new int[players.Length];
 		for (int i = 0; i < selections.Length; i++) {
 			selections [i] = 100;
+		}
+
+		if (auto_select) {
+			for (int i = 0; i < selections.Length; i++) {
+				selections [i] = i;
+			}
+			Finish ();
 		}
 	}
 	
