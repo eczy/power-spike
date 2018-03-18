@@ -42,6 +42,7 @@ public class BatteryCollector : MonoBehaviour {
 	}
 
 	public void RemoveBattery() {
+		thisBattery.transform.parent = null;
 		thisBattery = null;
 		currentBuffer = 0;
 	}

@@ -35,14 +35,16 @@ public class Hitbox : MonoBehaviour {
         Knockback knock = GetComponent<Knockback>();
         if (hurt != null)
         {
+			Debug.Log (gameObject.name + " was hit!");
             if (collect != null && collect.GetBattery() != null) {
+				Debug.Log ("Dropping battery!");
                 collect.GetBattery().transform.position = transform.position;
                 collect.GetBattery().transform.parent = null;
                 collect.RemoveBattery();
             }
             if (knock != null)
             {
-                knock.Knock(collision.contacts[0].point);
+                knock.Knock(collision.transform.position);
             }
         }
     }
