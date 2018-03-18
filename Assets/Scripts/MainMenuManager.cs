@@ -58,6 +58,7 @@ public class MainMenuManager : MonoBehaviour {
 	}
 
 	IEnumerator LoadAsyncScene(string scene_name){
+		Debug.Log ("Loading " + scene_name);
 		inLoadCoroutine = true;
 		yield return new WaitForSeconds (delays [index_active]);
 
