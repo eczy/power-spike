@@ -8,6 +8,8 @@ public class BatteryGoal : MonoBehaviour {
 	public int startBatteries = 0;
 
 	int currentBatteries = 0;
+	[Range(0,1f)]
+	public float scoreScreenShake = 0.5f;
 
 	public GameObject batteryPrefab;
 
@@ -44,6 +46,7 @@ public class BatteryGoal : MonoBehaviour {
 	}
 
 	void AddBattery(Battery battery) {
+		Camera.main.GetComponent<NickShake> ().AddTrauma (scoreScreenShake);
 		battery.SetOwner (gameObject);
 		currentBatteries += 1;
 		Destroy (battery.gameObject);

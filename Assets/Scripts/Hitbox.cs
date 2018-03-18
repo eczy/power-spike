@@ -6,6 +6,9 @@ public class Hitbox : MonoBehaviour {
 
     public float invincibility_time = 1f;
 
+	[Range(0,1)]
+	public float traumaOnHit = 0.2f;
+
     bool invincible = false;
 
 	// Use this for initialization
@@ -35,7 +38,11 @@ public class Hitbox : MonoBehaviour {
         Knockback knock = GetComponent<Knockback>();
         if (hurt != null)
         {
+<<<<<<< HEAD
+			Camera.main.GetComponent<NickShake> ().AddTrauma (traumaOnHit);
+=======
 			Debug.Log (gameObject.name + " was hit!");
+>>>>>>> 4933795a201f2523f98f383be9149187ee676935
             if (collect != null && collect.GetBattery() != null) {
 				Debug.Log ("Dropping battery!");
                 collect.GetBattery().transform.position = transform.position;
