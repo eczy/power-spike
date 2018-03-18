@@ -12,6 +12,7 @@ public class PlayerSelect : MonoBehaviour {
 	public bool auto_select = false;
 	[Header("Order: red pos, red neg, blue pos, blue neg")]
 	public Player[] players;
+	public Text start_text;
 
 	bool[] locked;
 	int[] selections;
@@ -40,6 +41,7 @@ public class PlayerSelect : MonoBehaviour {
 			}
 			Finish ();
 		}
+		start_text.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -55,6 +57,8 @@ public class PlayerSelect : MonoBehaviour {
 			
 			player_buttons [i].localPosition = new Vector3 (d.LeftStickX, d.LeftStickY, 0).normalized * radius;
 			if (d.Action1.WasPressed && d.LeftStick.Vector.magnitude > 0) {
+				if (locked [i])
+					continue;
 				player_buttons [i].localPosition = new Vector3 (Mathf.Sign (d.LeftStickX), Mathf.Sign (d.LeftStickY), 0).normalized * radius;
 				locked [i] = true;
 
@@ -78,11 +82,13 @@ public class PlayerSelect : MonoBehaviour {
 			if (locked [i] == false)
 				return;
 		}
+		start_text.enabled = true;
 		if (InputManager.ActiveDevice.MenuWasPressed)
 			Finish ();
 	}
 
 	void Finish(){
+		start_text.gameObject.SetActive (false);
 		foreach (RectTransform r in player_buttons)
 			r.gameObject.SetActive (false);
 		foreach (RectTransform r in player_select_areas)
