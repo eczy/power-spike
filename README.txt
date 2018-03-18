@@ -6,3 +6,11 @@ https://creativecommons.org/licenses/by/3.0/us/
 
 Music:
 https://www.dl-sounds.com/royalty-free/category/game-film/video-game/
+https://freesound.org/people/Deganoth/sounds/348685/
+https://freesound.org/people/knova/sounds/169666/
+https://freesound.org/people/benjaminharveydesign/sounds/315918/
+https://freesound.org/people/plasterbrain/sounds/242856/
+
+Textures and Background:
+https://opengameart.org/content/metal-texture
+https://opengameart.org/content/sci-fi-background
