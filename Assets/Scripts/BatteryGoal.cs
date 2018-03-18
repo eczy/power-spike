@@ -29,7 +29,7 @@ public class BatteryGoal : MonoBehaviour {
 	void Update() {
 		anim.SetFloat ("numBatteries", currentBatteries);
 		if (!audio.isPlaying && currentBatteries + 1 >= maxBatteries) {
-			AudioSource.Play ();
+			audio.Play ();
 		}
 	}
 
