@@ -4286,7 +4286,8 @@ MonoBehaviour:
   - {fileID: 1405730931}
   - {fileID: 1112587838}
   - {fileID: 2055797769}
-  start_text: {fileID: 1599266269}
+  press_start_text: {fileID: 1599266269}
+  text_switch_delay: 1
 --- !u!4 &819796505
 Transform:
   m_ObjectHideFlags: 0
@@ -9780,7 +9781,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
