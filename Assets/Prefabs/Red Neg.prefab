@@ -677,9 +677,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge_system: {fileID: 198598989565806356}
-  charge_duration: 1
-  charge_force: 15
+  charge_duration: 0.2
+  charge_force: 25
   cooldown: 1
+  electric_sound: {fileID: 8300000, guid: 3599af490f086422c9c42787f5e90063, type: 3}
+  sound_volume: 0.4
   left: {fileID: 114377981441702416}
   right: {fileID: 114982589576170244}
   punch_target: {fileID: 4973081637228692}
@@ -698,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59ca3fec3f43fd4b9c7280b808d9234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockback_force: 15
+  knockback_force: 20
   explosion_radius: 0
   upwards_modifier: 1
 --- !u!114 &114377981441702416
@@ -712,8 +714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81283db222a0d46cb9e013c9122212d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jab_sound: {fileID: 0}
-  miss_sound: {fileID: 0}
+  jab_sound: {fileID: 8300000, guid: 802b28678a34d403abaad3811abfd655, type: 3}
+  miss_sound: {fileID: 8300000, guid: c9418ac59e6434f2eabe1edfc68d1bbd, type: 3}
   jab_volume: 1
   miss_volume: 1
 --- !u!114 &114425791634237340
@@ -740,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibility_time: 0
+  traumaOnHit: 0.2
 --- !u!114 &114511934239093774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -802,8 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81283db222a0d46cb9e013c9122212d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jab_sound: {fileID: 0}
-  miss_sound: {fileID: 0}
+  jab_sound: {fileID: 8300000, guid: 802b28678a34d403abaad3811abfd655, type: 3}
+  miss_sound: {fileID: 8300000, guid: c9418ac59e6434f2eabe1edfc68d1bbd, type: 3}
   jab_volume: 1
   miss_volume: 1
 --- !u!114 &114983409745183492
@@ -1391,7 +1394,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5
+      value: 6
       mode: 0
       spread: 0
       speed:

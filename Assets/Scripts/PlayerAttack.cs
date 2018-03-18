@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour {
 	public float charge_duration = 1f;
 	public float charge_force = 1f;
 	public float cooldown = 1f;
+	public AudioClip electric_sound;
+	public float sound_volume = 1f;
 
 	[Header("Punch Parameters")]
 	public Fist left;
@@ -53,6 +55,8 @@ public class PlayerAttack : MonoBehaviour {
 	IEnumerator ChargeAttack(){
 		charge_attacking = true;
 		em.enabled = true;
+
+		AudioSource.PlayClipAtPoint (electric_sound, Camera.main.transform.position, sound_volume);
 
 		Collider[] colliders = Physics.OverlapSphere(transform.position, charge_system.shape.radius);
 		foreach (Collider hit in colliders)
