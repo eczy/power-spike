@@ -16,26 +16,26 @@ public class MainMenuManager : MonoBehaviour {
 	int index_active = 0;
 	bool inLoadCoroutine = false;
 	Coroutine co;
-	Player virtualplayer;
-
+	InputDevice device;
 	void Start(){
-		virtualplayer = GetComponent<Player> ();
 		buttons [index_active].Select ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (virtualplayer.device.Direction.Y < 0 && get_input) {
+		device = InputManager.ActiveDevice;
+
+		if (device.Direction.Y < 0 && get_input) {
 			index_active = (index_active + 1) % buttons.Length;
 			co = StartCoroutine (DelayInput ());
-		} else if (virtualplayer.device.Direction.Y > 0 && get_input) {
+		} else if (device.Direction.Y > 0 && get_input) {
 			index_active -= 1;
 			if (index_active < 0)
 				index_active = buttons.Length - 1;
 			co = StartCoroutine (DelayInput ());
 		}
 
-		if (virtualplayer.device.Action1.WasPressed) {
+		if (device.Action1.WasPressed) {
 			if (co != null)
 				StopCoroutine (co);
 			get_input = false;

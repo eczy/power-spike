@@ -38,11 +38,7 @@ public class Hitbox : MonoBehaviour {
         Knockback knock = GetComponent<Knockback>();
         if (hurt != null)
         {
-<<<<<<< HEAD
 			Camera.main.GetComponent<NickShake> ().AddTrauma (traumaOnHit);
-=======
-			Debug.Log (gameObject.name + " was hit!");
->>>>>>> 4933795a201f2523f98f383be9149187ee676935
             if (collect != null && collect.GetBattery() != null) {
 				Debug.Log ("Dropping battery!");
                 collect.GetBattery().transform.position = transform.position;
