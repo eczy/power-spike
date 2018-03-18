@@ -5,6 +5,7 @@ using UnityEngine;
 public class BatteryGoal : MonoBehaviour {
 
 	public int maxBatteries = 5;
+	public int startBatteries = 0;
 
 	int currentBatteries = 0;
 
@@ -14,10 +15,11 @@ public class BatteryGoal : MonoBehaviour {
 
 	void Start () {
 		anim = GetComponent<Animator> ();
-        for (int i = 0; i < maxBatteries; i++)
+        for (int i = 0; i < startBatteries; i++)
         {
             AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
         }
+		currentBatteries = startBatteries;
 	}
 
 	void Update() {
@@ -48,5 +50,9 @@ public class BatteryGoal : MonoBehaviour {
 	Battery RemoveBattery() {
 		currentBatteries -= 1;
 		return Instantiate (batteryPrefab).GetComponent<Battery>();
+	}
+
+	public int GetBatteries(){
+		return currentBatteries;
 	}
 }
