@@ -17,6 +17,7 @@ public class BatteryGoal : MonoBehaviour {
 	AudioSource audio;
 
 	void Start () {
+		audio = GetComponent<AudioSource> ();
 		audio.clip = alarmSound;
 		anim = GetComponent<Animator> ();
         for (int i = 0; i < startBatteries; i++)
