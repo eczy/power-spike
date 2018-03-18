@@ -32,6 +32,8 @@ public class BatteryGoal : MonoBehaviour {
 		BatteryCollector collector = other.GetComponent<BatteryCollector> ();
 
 		if (collector && collector.CanDrop()) {
+			Camera.main.GetComponent<NickShake> ().AddTrauma (scoreScreenShake);
+
 			Battery battery = collector.GetBattery ();
 			collector.RemoveBattery ();
 			AddBattery (battery);
@@ -46,7 +48,6 @@ public class BatteryGoal : MonoBehaviour {
 	}
 
 	void AddBattery(Battery battery) {
-		Camera.main.GetComponent<NickShake> ().AddTrauma (scoreScreenShake);
 		battery.SetOwner (gameObject);
 		currentBatteries += 1;
 		Destroy (battery.gameObject);
