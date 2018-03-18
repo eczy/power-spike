@@ -68,27 +68,47 @@ public class PlayerSelect : MonoBehaviour {
 
 				// Top Right
 				if (Mathf.Sign (d.LeftStickX) > 0 && Mathf.Sign (d.LeftStickY) > 0) {
+					bool already_exists = false;
+					for (int j = 0; j < selections.Length; ++j)
+						if (selections [j] == 2)
+							already_exists = true;
+					if (already_exists)
+						continue;
 					selections [i] = 2;
 					locked [i] = true;
-
 				}
 				// Top Left
 				else if (Mathf.Sign (d.LeftStickX) < 0 && Mathf.Sign (d.LeftStickY) > 0) {
+					bool already_exists = false;
+					for (int j = 0; j < selections.Length; ++j)
+						if (selections [j] == 0)
+							already_exists = true;
+					if (already_exists)
+						continue;
 					selections [i] = 0;
 					locked [i] = true;
-
 				}
 				// Bottom Right
 				else if (Mathf.Sign (d.LeftStickX) > 0 && Mathf.Sign (d.LeftStickY) < 0) {
+					bool already_exists = false;
+					for (int j = 0; j < selections.Length; ++j)
+						if (selections [j] == 3)
+							already_exists = true;
+					if (already_exists)
+						continue;
 					selections [i] = 3;
 					locked [i] = true;
-
 				}
 				// Bottom Left
 				else if (Mathf.Sign (d.LeftStickX) < 0 && Mathf.Sign (d.LeftStickY) < 0) {
+					bool already_exists = false;
+					for (int j = 0; j < selections.Length; ++j)
+						if (selections [j] == 1)
+							already_exists = true;
+					if (already_exists)
+						continue;
 					selections [i] = 1;
 					locked [i] = true;
-
 				}
 			}
 		}

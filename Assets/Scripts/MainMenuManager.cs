@@ -16,22 +16,22 @@ public class MainMenuManager : MonoBehaviour {
 	int index_active = 0;
 	bool inLoadCoroutine = false;
 	Coroutine co;
-	InputDevice device;
+
 	void Start(){
 		buttons [index_active].Select ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		device = InputManager.ActiveDevice;
-
+		InputDevice device = InputManager.ActiveDevice;
 		if (device.Direction.Y < 0 && get_input) {
-			index_active = (index_active + 1) % buttons.Length;
-			co = StartCoroutine (DelayInput ());
+			index_active += 1;
+			if (index_active >= buttons.Length)
+				index_active = buttons.Length-1;
 		} else if (device.Direction.Y > 0 && get_input) {
 			index_active -= 1;
 			if (index_active < 0)
-				index_active = buttons.Length - 1;
+				index_active = 0;
 			co = StartCoroutine (DelayInput ());
 		}
 
