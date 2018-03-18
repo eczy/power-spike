@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BatteryGoal : MonoBehaviour {
 
-	public int maxBatteries = 5;
+	public int maxBatteries = 10;
 
 	int currentBatteries = 0;
 
@@ -33,7 +33,7 @@ public class BatteryGoal : MonoBehaviour {
 			AddBattery (battery);
 
 		}
-		else if (collector && collector.CanGrab()) {
+		else if (collector && collector.CanGrab() && currentBatteries > 0) {
 			Battery battery = RemoveBattery ();
 			collector.TakeBattery (battery);
 		}
