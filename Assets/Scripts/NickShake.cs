@@ -49,10 +49,9 @@ public class NickShake : MonoBehaviour {
 
 		float x = maxTranslate * shake * (Mathf.PerlinNoise(0, -yCoord) * 2 - 1);
 		float y = maxTranslate * shake * (Mathf.PerlinNoise(-xCoord, -yCoord) * 2 - 1);
-		float z = maxTranslate * shake * (Mathf.PerlinNoise(-xCoord, 0) * 2 - 1);
 
 		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
-		transform.localPosition = new Vector3 (x, y, z);
+		transform.localPosition = new Vector3 (x, y, 0.0f);
 	}
 
 	void DecayTrauma()
