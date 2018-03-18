@@ -622,6 +622,21 @@ Prefab:
       propertyPath: jab_volume
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: charge_force
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: randomSeed
+      value: -976133872
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
@@ -898,7 +913,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2698,6 +2713,11 @@ Prefab:
       propertyPath: alarmSound
       value: 
       objectReference: {fileID: 8300000, guid: 9246d1637b4c4456e9dcf521a2c085fc, type: 3}
+    - target: {fileID: 65944635382236152, guid: bc92f22647a04485ab29e6d8b1e8f1a4,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
   m_IsPrefabParent: 0
@@ -4376,7 +4396,8 @@ MonoBehaviour:
   - {fileID: 1405730931}
   - {fileID: 1112587838}
   - {fileID: 2055797769}
-  start_text: {fileID: 0}
+  press_start_text: {fileID: 1599266269}
+  text_switch_delay: 1
 --- !u!4 &819796505
 Transform:
   m_ObjectHideFlags: 0
@@ -5199,7 +5220,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5924,6 +5945,21 @@ Prefab:
       propertyPath: jab_volume
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: charge_force
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1696631123
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
   m_IsPrefabParent: 0
@@ -6220,6 +6256,21 @@ Prefab:
         type: 2}
       propertyPath: charge_duration
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1696631123
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: charge_force
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
@@ -10776,6 +10827,11 @@ Prefab:
       propertyPath: alarmSound
       value: 
       objectReference: {fileID: 8300000, guid: 9246d1637b4c4456e9dcf521a2c085fc, type: 3}
+    - target: {fileID: 65944635382236152, guid: bc92f22647a04485ab29e6d8b1e8f1a4,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
   m_IsPrefabParent: 0
@@ -12356,6 +12412,21 @@ Prefab:
         type: 2}
       propertyPath: charge_duration
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: charge_force
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 198598989565806356, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1696631123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}

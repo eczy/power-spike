@@ -50,11 +50,14 @@ public class PlayerSelect : MonoBehaviour {
 	void Update () {
 		if (finished)
 			return;
+		
 		for (int i = 0; i < InputManager.Devices.Count; i++) {
 			InputDevice d = InputManager.Devices [i];
 			if (locked [i]) {
-				if (d.Action2.WasPressed)
+				if (d.Action2.WasPressed) {
 					locked [i] = false;
+					selections [i] = 100;
+				}
 				else
 					continue;
 			}
@@ -62,23 +65,30 @@ public class PlayerSelect : MonoBehaviour {
 			player_buttons [i].localPosition = new Vector3 (d.LeftStickX, d.LeftStickY, 0).normalized * radius;
 			if (d.Action1.WasPressed && d.LeftStick.Vector.magnitude > 0) {
 				player_buttons [i].localPosition = new Vector3 (Mathf.Sign (d.LeftStickX), Mathf.Sign (d.LeftStickY), 0).normalized * radius;
-				locked [i] = true;
 
 				// Top Right
 				if (Mathf.Sign (d.LeftStickX) > 0 && Mathf.Sign (d.LeftStickY) > 0) {
 					selections [i] = 2;
+					locked [i] = true;
+
 				}
 				// Top Left
 				else if (Mathf.Sign (d.LeftStickX) < 0 && Mathf.Sign (d.LeftStickY) > 0) {
 					selections [i] = 0;
+					locked [i] = true;
+
 				}
 				// Bottom Right
 				else if (Mathf.Sign (d.LeftStickX) > 0 && Mathf.Sign (d.LeftStickY) < 0) {
 					selections [i] = 3;
+					locked [i] = true;
+
 				}
 				// Bottom Left
 				else if (Mathf.Sign (d.LeftStickX) < 0 && Mathf.Sign (d.LeftStickY) < 0) {
 					selections [i] = 1;
+					locked [i] = true;
+
 				}
 			}
 		}
@@ -94,6 +104,7 @@ public class PlayerSelect : MonoBehaviour {
 	}
 
 	IEnumerator Finish(){
+		finished = true;
 		foreach (RectTransform r in player_buttons)
 			r.gameObject.SetActive (false);
 		foreach (RectTransform r in player_select_areas)
