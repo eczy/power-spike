@@ -43,7 +43,7 @@ public class BatteryGoal : MonoBehaviour {
 			AddBattery (battery);
 
 		}
-		else if (collector && collector.CanGrab() && collector.gameObject.GetComponent<Player>().team == teamGoal) {
+		else if (collector && collector.CanGrab() && collector.gameObject.GetComponent<Player>().team != teamGoal) {
 			Battery battery = RemoveBattery ();
 			if (battery == null)
 				return;
