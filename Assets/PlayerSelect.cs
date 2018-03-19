@@ -43,7 +43,6 @@ public class PlayerSelect : MonoBehaviour {
 			}
 			Finish ();
 		}
-		press_start_text.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -113,12 +112,6 @@ public class PlayerSelect : MonoBehaviour {
 			}
 		}
 
-		// If all players are locked in
-		for (int i = 0; i < locked.Length; i++) {
-			if (locked [i] == false)
-				return;
-		}
-		press_start_text.gameObject.SetActive(true);
 		if (InputManager.ActiveDevice.MenuWasPressed)
 			StartCoroutine(Finish ());
 	}
@@ -130,13 +123,15 @@ public class PlayerSelect : MonoBehaviour {
 		foreach (RectTransform r in player_select_areas)
 			r.gameObject.SetActive (false);
 
+        press_start_text.transform.localPosition = Vector3.zero;
 		press_start_text.text = "READY";
 		yield return new WaitForSeconds (text_switch_delay);
 		press_start_text.color = Color.red;
 		press_start_text.text = "GO";
 
 		for (int i = 0; i < players.Length; i++) {
-			players [selections[i]].player_number = i;
+            if (selections[i] != 100)
+			    players [selections[i]].player_number = i;
 		}
 
 		yield return new WaitForSeconds (text_switch_delay);
