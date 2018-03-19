@@ -111,6 +111,14 @@ public class PlayerSelect : MonoBehaviour {
 				}
 			}
 		}
+        int selected = 0;
+        for (int i = 0; i < selections.Length; i++)
+        {
+            if (selections[i] != 100)
+                selected++;
+        }
+        if (selected < 1)
+            return;
 
 		if (InputManager.ActiveDevice.MenuWasPressed)
 			StartCoroutine(Finish ());

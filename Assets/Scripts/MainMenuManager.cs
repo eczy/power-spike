@@ -19,6 +19,7 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start(){
 		buttons [index_active].Select ();
+        index_active = 0;
 	}
 	
 	// Update is called once per frame
@@ -36,12 +37,14 @@ public class MainMenuManager : MonoBehaviour {
 		}
 
 		if (device.Action1.WasPressed) {
+            Debug.Log("Active Index: " + index_active);
 			if (co != null)
 				StopCoroutine (co);
 			get_input = false;
 
             if (index_active == buttons.Length - 1)
             {
+                Debug.Log("Exiting");
                 Application.Quit();
                 return;
             }
