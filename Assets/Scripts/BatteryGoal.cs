@@ -6,7 +6,7 @@ public class BatteryGoal : MonoBehaviour {
 
 	public int maxBatteries = 5;
 	public int startBatteries = 0;
-
+	public Player.Team teamGoal;
 	int currentBatteries = 0;
 
 	public GameObject batteryPrefab;
@@ -43,7 +43,7 @@ public class BatteryGoal : MonoBehaviour {
 			AddBattery (battery);
 
 		}
-		else if (collector && collector.CanGrab()) {
+		else if (collector && collector.CanGrab() && collector.gameObject.GetComponent<Player>().team == teamGoal) {
 			Battery battery = RemoveBattery ();
 			if (battery == null)
 				return;
