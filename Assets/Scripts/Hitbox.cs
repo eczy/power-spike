@@ -32,13 +32,15 @@ public class Hitbox : MonoBehaviour {
             return;
         else
             StartCoroutine(IFrames());
-
+		Health health = GetComponent<Health> ();
         Hurtbox hurt = collision.collider.GetComponent<Hurtbox>();
         BatteryCollector collect = GetComponent<BatteryCollector>();
         Knockback knock = GetComponent<Knockback>();
         if (hurt != null)
         {
-			Camera.main.GetComponent<NickShake> ().AddTrauma (traumaOnHit);
+			health.Hurt (hurt.damage);
+			if (Camera.main.GetComponent<NickShake> () != null)
+				Camera.main.GetComponent<NickShake> ().AddTrauma (traumaOnHit);
             if (collect != null && collect.GetBattery() != null) {
 				Debug.Log ("Dropping battery!");
                 collect.GetBattery().transform.position = transform.position;
@@ -47,7 +49,7 @@ public class Hitbox : MonoBehaviour {
             }
             if (knock != null)
             {
-                knock.Knock(collision.transform.position);
+                knock.Knock(collision.contacts[0].normal);
             }
         }
     }

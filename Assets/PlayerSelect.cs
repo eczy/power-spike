@@ -14,6 +14,7 @@ public class PlayerSelect : MonoBehaviour {
 	public Player[] players;
 	public Text press_start_text;
 	public float text_switch_delay = 1f;
+	public PauseMenu pause_menu;
 
 	bool[] locked;
 	int[] selections;
@@ -21,6 +22,7 @@ public class PlayerSelect : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		pause_menu.gameObject.SetActive (false);
 		for (int i = 0; i < players.Length; i++) {
 			players [i].player_number = 100;
 		}
@@ -29,8 +31,6 @@ public class PlayerSelect : MonoBehaviour {
 		for (int i = 0; i < locked.Length; i++) {
 			locked [i] = false;
 		}
-		foreach (bool b in locked)
-			Debug.Log (b);
 
 		selections = new int[players.Length];
 		for (int i = 0; i < selections.Length; i++) {
@@ -144,5 +144,6 @@ public class PlayerSelect : MonoBehaviour {
 
 		yield return new WaitForSeconds (text_switch_delay);
 		press_start_text.gameObject.SetActive (false);
+		pause_menu.gameObject.SetActive (true);
 	}
 }
