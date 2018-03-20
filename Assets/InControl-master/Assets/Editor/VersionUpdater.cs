@@ -21,7 +21,7 @@ namespace InControl
 			if (!EditorApplication.isPlaying)
 			{
 				EditorApplication.playmodeStateChanged -= Update;
-				UpdateVersion();
+				//UpdateVersion();
 			}
 		}
 
