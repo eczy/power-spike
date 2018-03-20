@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class DamageColor : MonoBehaviour {
 
-	Renderer rend;
+	//Renderer rend;
 	//Health health;
-	Color original;
+	//Color original;
 
 	// Use this for initialization
 	void Start () {
 	//	health = GetComponent<Health> ();
-		rend = GetComponent<Renderer> ();
-		original = rend.material.color;
+		//rend = GetComponent<Renderer> ();
+		//original = rend.material.color;
 	}
 	
 	// Update is called once per frame

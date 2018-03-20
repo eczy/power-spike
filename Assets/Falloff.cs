@@ -32,7 +32,6 @@ public class Falloff : MonoBehaviour {
 		PlayerMovement m = GetComponent<PlayerMovement> ();
 		PlayerAttack a = GetComponent<PlayerAttack> ();
 		Hitbox h = GetComponent<Hitbox> ();
-		PlayerDeath d = GetComponent<PlayerDeath> ();
 		Health health = GetComponent<Health> ();
 
 		r.enabled = false;

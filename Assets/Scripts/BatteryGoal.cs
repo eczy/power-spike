@@ -12,13 +12,12 @@ public class BatteryGoal : MonoBehaviour {
 	public GameObject batteryPrefab;
 
 	Animator anim;
-	bool alarmPlaying = false;
 	public AudioClip alarmSound;
-	AudioSource audio;
+	AudioSource audioSource;
 
 	void Start () {
-		audio = GetComponent<AudioSource> ();
-		audio.clip = alarmSound;
+		audioSource = GetComponent<AudioSource> ();
+		audioSource.clip = alarmSound;
 		anim = GetComponent<Animator> ();
         for (int i = 0; i < startBatteries; i++)
         {
@@ -29,8 +28,8 @@ public class BatteryGoal : MonoBehaviour {
 
 	void Update() {
 		anim.SetFloat ("numBatteries", currentBatteries);
-		if (!audio.isPlaying && currentBatteries == maxBatteries - 1) {
-			audio.Play ();
+		if (!audioSource.isPlaying && currentBatteries == maxBatteries - 1) {
+			audioSource.Play ();
 		}
 	}
 
