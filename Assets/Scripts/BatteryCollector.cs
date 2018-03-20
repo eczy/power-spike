@@ -14,7 +14,7 @@ public class BatteryCollector : MonoBehaviour {
 		player = GetComponent<Player> ();
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		if (player.device.Action2.WasPressed) {
 			currentBuffer = grabBuffer;
 		} else {
