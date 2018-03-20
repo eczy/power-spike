@@ -32,6 +32,8 @@ public class Falloff : MonoBehaviour {
 		PlayerMovement m = GetComponent<PlayerMovement> ();
 		PlayerAttack a = GetComponent<PlayerAttack> ();
 		Hitbox h = GetComponent<Hitbox> ();
+		PlayerDeath d = GetComponent<PlayerDeath> ();
+		Health health = GetComponent<Health> ();
 
 		r.enabled = false;
 		m.enabled = false;
@@ -41,7 +43,9 @@ public class Falloff : MonoBehaviour {
 			rend.enabled = false;
 
 		transform.position = player_spawn.position;
+		transform.rotation = player_spawn.rotation;
 		GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 		yield return new WaitForSeconds (respawn_time);
 
 		r.enabled = true;
@@ -51,6 +55,6 @@ public class Falloff : MonoBehaviour {
 		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
 			rend.enabled = true;
 		transform.forward = player_spawn.forward;
-
+		health.health = health.max_health;
 	}
 }
