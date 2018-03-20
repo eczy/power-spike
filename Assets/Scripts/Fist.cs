@@ -10,7 +10,6 @@ public class Fist : MonoBehaviour {
 	public float miss_volume = 1f;
 
 	Collider coll;
-	Rigidbody rb;
 	Animator anim;
 	Hurtbox hurt;
 
@@ -18,7 +17,6 @@ public class Fist : MonoBehaviour {
 	bool played_hit_sound = false;
 	void Start () {
 		coll = GetComponent<Collider> ();
-		rb = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animator> ();
 		hurt = GetComponent<Hurtbox> ();
 		coll.enabled = false;
