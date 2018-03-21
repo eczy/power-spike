@@ -12,34 +12,38 @@ public class GameOver : MonoBehaviour {
 	public Text gameoverText;
 	public Image black;
 	public float lerpDuration = 1f;
-	public bool gameover = false;
 
-	// Update is called once per frame
-	void Update () {
-		if (gameover) {
+	private bool screenShown = false;
+    private bool gameOver = false;
+
+	private void Update () {
+		if (screenShown) {
 			if (InputManager.ActiveDevice.Action1.WasPressed) {
 				StartCoroutine (LoadAsyncScene (main_menu_scene_name));
 			}
 		}
-		if (redTeam.GetBatteries () == redTeam.maxBatteries) {
+
+		if (!gameOver && redTeam.GetBatteries () == redTeam.maxBatteries) {
+            gameOver = true;
 			gameoverText.text = "Red team wins!\nPress A to restart.";
 			StartCoroutine (LerpScreen ());
-		} else if (blueTeam.GetBatteries () == blueTeam.maxBatteries) {
+		} else if (!gameOver && blueTeam.GetBatteries () == blueTeam.maxBatteries) {
+            gameOver = true;
 			gameoverText.text = "Blue team wins!\nPress A to restart.";
 			StartCoroutine (LerpScreen ());
 		}
 	}
 
-	IEnumerator LerpScreen()
+	private IEnumerator LerpScreen()
 	{
 		for (float time = 0; time < lerpDuration; time += Time.deltaTime) {
 			black.color = Color.Lerp (Color.clear, Color.black, time/lerpDuration);
 			gameoverText.color = Color.Lerp (Color.clear, Color.white, time/lerpDuration);
 			yield return null;
 		}
-		gameover = true;
 	
-		yield return null;
+		screenShown = true;
+        ShowStats();
 	}
 
 	IEnumerator LoadAsyncScene(string scene_name){
@@ -50,4 +54,14 @@ public class GameOver : MonoBehaviour {
 		while (!asyncLoad.isDone)
 			yield return null;
 	}
+
+    private void ShowStats()
+    {
+        PlayerStats[] stats = GetComponentsInChildren<PlayerStats>(true);
+
+        foreach (var stat in stats)
+        {
+            stat.gameObject.SetActive(true);
+        }
+    }
 }

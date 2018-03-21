@@ -10,15 +10,16 @@ public class Falloff : MonoBehaviour {
 	public Transform player_spawn;
 
 	Vector3 original_position;
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.y <= falloff_y_value)
+        {
 			StartCoroutine (Respawn ());
+
+            PlayerToStats stats = GetComponent<PlayerToStats>();
+            stats.ReportDeath();
+        }
 	}
 
 	IEnumerator Respawn(){

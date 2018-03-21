@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 114446829622212236}
   - component: {fileID: 114355056694035688}
   - component: {fileID: 114791786886199078}
+  - component: {fileID: 114805827616833044}
   m_Layer: 8
   m_Name: Red Pos
   m_TagString: Untagged
@@ -782,6 +783,18 @@ MonoBehaviour:
   respawn_time: 2
   battery_respawn: {fileID: 0}
   player_spawn: {fileID: 0}
+--- !u!114 &114805827616833044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836290090692342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f87abc3ea74ee4bb8435220276b910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
 --- !u!114 &114924217390631888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -832,6 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_number: 0
+  team: 0
 --- !u!135 &135589761874393164
 SphereCollider:
   m_ObjectHideFlags: 1
