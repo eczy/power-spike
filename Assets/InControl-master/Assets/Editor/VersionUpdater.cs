@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-
+#pragma warning disable 0618
 namespace InControl
 {
 	[InitializeOnLoad]
@@ -21,7 +21,7 @@ namespace InControl
 			if (!EditorApplication.isPlaying)
 			{
 				EditorApplication.playmodeStateChanged -= Update;
-				UpdateVersion();
+				//UpdateVersion();
 			}
 		}
 

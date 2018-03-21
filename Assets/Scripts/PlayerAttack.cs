@@ -21,7 +21,6 @@ public class PlayerAttack : MonoBehaviour {
 	public float punch_damage = 1f;
     public float punch_distance = 1f;
 
-	Rigidbody rb;
 	Player p;
 	Charge charge;
 	ParticleSystem.EmissionModule em;
@@ -32,7 +31,6 @@ public class PlayerAttack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody> ();
 		p = GetComponent<Player> ();
 		em = charge_system.emission;
 		charge = GetComponent<Charge> ();
@@ -42,7 +40,6 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(p.device.LeftTrigger.WasPressed);
         if (p.device.LeftTrigger.WasPressed && !charge_attacking) {
             StartCoroutine (ChargeAttack ());
 		}

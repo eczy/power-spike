@@ -8,7 +8,7 @@ using InControl;
 //#if UNITY_EDITOR
 //using UnityEditor;
 //#endif
-
+#pragma warning disable 0618
 
 /**
  * WARNING: This is NOT an example of how to use InControl.
