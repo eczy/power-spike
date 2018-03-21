@@ -25,7 +25,7 @@ public class BatteryCollector : MonoBehaviour {
 	void OnTriggerStay(Collider other)
 	{
 		Battery battery = other.gameObject.GetComponent<Battery> ();
-		if (battery != null && !HasBattery()) {
+		if (battery && !HasBattery()) {
 			if (currentBuffer > 0.0f) {
 				TakeBattery (battery);
 				currentBuffer = 0;

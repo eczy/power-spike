@@ -19,11 +19,7 @@ public class BatteryGoal : MonoBehaviour {
 		audioSource = GetComponent<AudioSource> ();
 		audioSource.clip = alarmSound;
 		anim = GetComponent<Animator> ();
-        for (int i = 0; i < startBatteries; i++)
-        {
-            AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
-        }
-		currentBatteries = startBatteries;
+        AddInitialBatteries();
 	}
 
 	void Update() {
@@ -42,11 +38,12 @@ public class BatteryGoal : MonoBehaviour {
 			AddBattery (battery);
 
 		}
-		else if (collector && collector.CanGrab() && collector.gameObject.GetComponent<Player>().team != teamGoal) {
+		else if (collector && collector.CanGrab() && !CollectorOnThisTeam(collector)) {
 			Battery battery = RemoveBattery ();
-			if (battery == null)
-				return;
-			collector.TakeBattery (battery);
+            if (battery)
+            {
+                collector.TakeBattery(battery);
+            }
 		}
 	}
 
@@ -66,4 +63,18 @@ public class BatteryGoal : MonoBehaviour {
 	public int GetBatteries(){
 		return currentBatteries;
 	}
+
+    bool CollectorOnThisTeam(BatteryCollector collector)
+    {
+        return collector.GetComponent<Player>().team == teamGoal;
+    }
+
+    void AddInitialBatteries()
+    {
+        for (int i = 0; i < startBatteries; i++)
+        {
+            AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
+        }
+		currentBatteries = startBatteries;
+    }
 }
