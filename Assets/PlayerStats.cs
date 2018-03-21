@@ -12,11 +12,6 @@ public class PlayerStats : MonoBehaviour {
     private int steals = 0;
     private int captures = 0;
 
-    private void Start()
-    {
-        gameObject.SetActive(false);
-    }
-
     private void Update()
     {
         deathText.text = "Deaths: " + deaths.ToString();

@@ -57,7 +57,7 @@ public class GameOver : MonoBehaviour {
 
     private void ShowStats()
     {
-        PlayerStats[] stats = GetComponentsInChildren<PlayerStats>(true);
+        StatPanel[] stats = GetComponentsInChildren<StatPanel>(true);
 
         foreach (var stat in stats)
         {
