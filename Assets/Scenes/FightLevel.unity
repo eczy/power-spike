@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -592,21 +592,6 @@ Prefab:
       propertyPath: player_spawn
       value: 
       objectReference: {fileID: 1810362763}
-    - target: {fileID: 114355056694035688, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
@@ -615,39 +600,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4114276565226322, guid: 6dac0a426aa224a379b11f943508ee29,
     type: 2}
   m_PrefabInternal: {fileID: 73860970}
---- !u!1 &73860972 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1836290090692342, guid: 6dac0a426aa224a379b11f943508ee29,
-    type: 2}
-  m_PrefabInternal: {fileID: 73860970}
---- !u!114 &73860973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 73860972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1966b9e03dc004dd48c0440961747b25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_health: 5
-  health: 5
---- !u!114 &73860974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 73860972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29dc655951c4a9ca91c10769a7dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nudge_force: 5
-  nudge_torque: 10
-  y_delta: 2
-  dead: 0
 --- !u!1 &113169488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6146,21 +6098,6 @@ Prefab:
       propertyPath: player_spawn
       value: 
       objectReference: {fileID: 1810362763}
-    - target: {fileID: 114355056694035688, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
   m_IsPrefabParent: 0
@@ -6169,45 +6106,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4114276565226322, guid: 9aee6835825594dd98ac5776123bef98,
     type: 2}
   m_PrefabInternal: {fileID: 1112587834}
---- !u!1 &1112587836 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1836290090692342, guid: 9aee6835825594dd98ac5776123bef98,
-    type: 2}
-  m_PrefabInternal: {fileID: 1112587834}
---- !u!114 &1112587837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1112587836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1966b9e03dc004dd48c0440961747b25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_health: 5
-  health: 5
 --- !u!114 &1112587838 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114984756008772962, guid: 9aee6835825594dd98ac5776123bef98,
     type: 2}
   m_PrefabInternal: {fileID: 1112587834}
   m_Script: {fileID: 11500000, guid: 6f9aeb4ca630c40c1810e90aa128d29e, type: 3}
---- !u!114 &1112587839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1112587836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29dc655951c4a9ca91c10769a7dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nudge_force: 5
-  nudge_torque: 10
-  y_delta: 2
-  dead: 0
 --- !u!1 &1128628773
 GameObject:
   m_ObjectHideFlags: 0
@@ -6456,26 +6360,6 @@ Prefab:
       propertyPath: player_spawn
       value: 
       objectReference: {fileID: 2024812947}
-    - target: {fileID: 114984756008772962, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355056694035688, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -6484,39 +6368,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4114276565226322, guid: c91802a91986f4458823fc935abda372,
     type: 2}
   m_PrefabInternal: {fileID: 1162796104}
---- !u!1 &1162796106 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1836290090692342, guid: c91802a91986f4458823fc935abda372,
-    type: 2}
-  m_PrefabInternal: {fileID: 1162796104}
---- !u!114 &1162796107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162796106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1966b9e03dc004dd48c0440961747b25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_health: 5
-  health: 5
---- !u!114 &1162796108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162796106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29dc655951c4a9ca91c10769a7dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nudge_force: 5
-  nudge_torque: 10
-  y_delta: 2
-  dead: 0
 --- !u!1 &1171833321
 GameObject:
   m_ObjectHideFlags: 0
@@ -13142,26 +12993,6 @@ Prefab:
       propertyPath: player_spawn
       value: 
       objectReference: {fileID: 2024812947}
-    - target: {fileID: 114984756008772962, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355056694035688, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
   m_IsPrefabParent: 0
@@ -13170,39 +13001,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4114276565226322, guid: a804a1ff33d69489097a1f87ec42e62e,
     type: 2}
   m_PrefabInternal: {fileID: 1960156669}
---- !u!1 &1960156671 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1836290090692342, guid: a804a1ff33d69489097a1f87ec42e62e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1960156669}
---- !u!114 &1960156672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1960156671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf29dc655951c4a9ca91c10769a7dda3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nudge_force: 5
-  nudge_torque: 10
-  y_delta: 2
-  dead: 0
---- !u!114 &1960156673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1960156671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1966b9e03dc004dd48c0440961747b25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  max_health: 5
-  health: 5
 --- !u!1 &1999838089
 GameObject:
   m_ObjectHideFlags: 0

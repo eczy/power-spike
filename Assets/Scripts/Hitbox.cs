@@ -32,13 +32,11 @@ public class Hitbox : MonoBehaviour {
             return;
         else
             StartCoroutine(IFrames());
-		Health health = GetComponent<Health> ();
         Hurtbox hurt = collision.collider.GetComponent<Hurtbox>();
         BatteryCollector collect = GetComponent<BatteryCollector>();
         Knockback knock = GetComponent<Knockback>();
         if (hurt != null)
         {
-			health.Hurt (hurt.damage);
 			if (Camera.main.GetComponent<NickShake> () != null)
 				Camera.main.GetComponent<NickShake> ().AddTrauma (traumaOnHit);
             if (collect != null && collect.GetBattery() != null) {
