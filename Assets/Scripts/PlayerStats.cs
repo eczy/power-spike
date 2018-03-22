@@ -14,9 +14,9 @@ public class PlayerStats : MonoBehaviour {
 
     private void Update()
     {
-        deathText.text = "Deaths: " + deaths.ToString();
-        stealText.text = "Steals: " + steals.ToString();
-        captureText.text = "Captures: " + captures.ToString();
+        deathText.text   = deaths.ToString();
+        stealText.text   = steals.ToString();
+        captureText.text = captures.ToString();
     }
 
     public void Death()
