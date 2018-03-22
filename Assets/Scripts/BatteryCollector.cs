@@ -51,6 +51,7 @@ public class BatteryCollector : MonoBehaviour {
 		battery.SetOwner (gameObject);
 		thisBattery = battery;
 		currentBuffer = 0;
+        EventManager.Trigger("BatteryPickupEvent");
 	}
 
 	public bool CanGrab() {
