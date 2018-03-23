@@ -15,6 +15,7 @@ public class TutorialManager : MonoBehaviour {
 	void Update () {
         if (!ready && CheckPlayersReady())
         {
+            ready = true;
             Debug.Log("Ready");
         }
 	}

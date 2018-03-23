@@ -27,7 +27,7 @@ public class PlayerTutorial : MonoBehaviour {
 
         while (true)
         {
-            if (triggerGoal.GetBatteries() > 0)
+            if (triggerGoal.GetBatteries() > triggerGoal.startBatteries)
             {
                 StartCoroutine(PunchTutorialState());
                 yield break;
