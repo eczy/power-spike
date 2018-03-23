@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour {
+
+    public string nextScene;
 
     PlayerTutorial[] tutorials;
 
@@ -16,7 +19,7 @@ public class TutorialManager : MonoBehaviour {
         if (!ready && CheckPlayersReady())
         {
             ready = true;
-            Debug.Log("Ready");
+            SceneManager.LoadScene(nextScene);
         }
 	}
 
@@ -24,7 +27,7 @@ public class TutorialManager : MonoBehaviour {
     {
         foreach (PlayerTutorial player in tutorials)
         {
-            if (!player.IsReady())
+            if (!player.IsReady() && player.player.gameObject.activeInHierarchy)
             {
                 return false;
             }

@@ -17,14 +17,7 @@ public class ScoreManager : MonoBehaviour {
 
 	int prev_blue = 0;
 	int prev_red = 0;
-	string red_text_orig;
-	string blue_text_orig;
 
-	// Use this for initialization
-	void Start () {
-		red_text_orig = red_batteries_text.text;
-		blue_text_orig = blue_batteries_text.text;
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,8 +37,5 @@ public class ScoreManager : MonoBehaviour {
 		lightning_middle.position = Vector3.Lerp (red_start.position, blue_start.position, p);
 		prev_red = red;
 		prev_blue = blue;
-
-		red_batteries_text.text = red_text_orig + red;
-		blue_batteries_text.text = blue_text_orig + blue;
 	}
 }

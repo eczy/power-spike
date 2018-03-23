@@ -14,15 +14,16 @@ public class PlayerSelect : MonoBehaviour {
 	public Player[] players;
 	public Text press_start_text;
 	public float text_switch_delay = 1f;
-	public PauseMenu pause_menu;
 
+    PlayerAssignment assignments;
 	bool[] locked;
 	int[] selections;
 	bool finished = false;
 
 	// Use this for initialization
 	void Start () {
-		pause_menu.gameObject.SetActive (false);
+        assignments = FindObjectOfType<PlayerAssignment>();
+
 		for (int i = 0; i < players.Length; i++) {
 			players [i].player_number = 100;
 		}
@@ -131,7 +132,7 @@ public class PlayerSelect : MonoBehaviour {
 		foreach (RectTransform r in player_select_areas)
 			r.gameObject.SetActive (false);
 
-        press_start_text.transform.localPosition = Vector3.zero;
+        press_start_text.transform.position = Camera.main.WorldToScreenPoint(Vector3.zero);
 		press_start_text.text = "READY";
 		yield return new WaitForSeconds (text_switch_delay);
 		press_start_text.color = Color.red;
@@ -142,8 +143,19 @@ public class PlayerSelect : MonoBehaviour {
 			    players [selections[i]].player_number = i;
 		}
 
+        foreach (Player player in players)
+        {
+            if (player.player_number != 100)
+            {
+                Charge charge = player.GetComponent<Charge>();
+                assignments.StorePlayerAssignment(player.team, charge.charge, player.player_number);
+                player.gameObject.SetActive(true);
+            }
+        }
+
 		yield return new WaitForSeconds (text_switch_delay);
 		press_start_text.gameObject.SetActive (false);
-		pause_menu.gameObject.SetActive (true);
+
+        FindObjectOfType<TutorialManager>().enabled = true;
 	}
 }
