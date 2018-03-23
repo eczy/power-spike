@@ -9,14 +9,12 @@ public class BatteryGoal : MonoBehaviour {
 	public Player.Team teamGoal;
 	public int currentBatteries = 0;
 
-	public GameObject batteryPrefab;
-
 	Animator anim;
 
 
 	void Start () {
 		anim = GetComponent<Animator> ();
-        AddInitialBatteries();
+		AddInitialBatteries();
 	}
 
 	void Update() {
@@ -35,10 +33,10 @@ public class BatteryGoal : MonoBehaviour {
 		}
 		else if (collector && collector.CanGrab() && !CollectorOnThisTeam(collector)) {
 			Battery battery = RemoveBattery ();
-            if (battery)
-            {
-                collector.TakeBattery(battery);
-            }
+			if (battery)
+			{
+				collector.TakeBattery(battery);
+			}
 		}
 	}
 
@@ -59,17 +57,17 @@ public class BatteryGoal : MonoBehaviour {
 		return currentBatteries;
 	}
 
-    bool CollectorOnThisTeam(BatteryCollector collector)
-    {
-        return collector.GetComponent<Player>().team == teamGoal;
-    }
+	bool CollectorOnThisTeam(BatteryCollector collector)
+	{
+		return collector.GetComponent<Player>().team == teamGoal;
+	}
 
-    void AddInitialBatteries()
-    {
-        for (int i = 0; i < startBatteries; i++)
-        {
-            AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
-        }
+	void AddInitialBatteries()
+	{
+		for (int i = 0; i < startBatteries; i++)
+		{
+			AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
+		}
 		currentBatteries = startBatteries;
-    }
+	}
 }
