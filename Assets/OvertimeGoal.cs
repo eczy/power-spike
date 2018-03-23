@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatteryGoal : MonoBehaviour {
+public class OvertimeGoal : MonoBehaviour {
 
 	public int maxBatteries = 5;
 	public int startBatteries = 0;
