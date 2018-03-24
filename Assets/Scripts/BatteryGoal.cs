@@ -27,16 +27,18 @@ public class BatteryGoal : MonoBehaviour {
 	void OnTriggerStay(Collider other) {
 		BatteryCollector collector = other.GetComponent<BatteryCollector> ();
 
-		if (collector) {
-            Player.Team team = other.gameObject.GetComponent<Player>().team;
-
+		if (collector && collector.CanDrop()) {
+			Battery battery = collector.GetBattery ();
+			collector.RemoveBattery ();
+			AddBattery (battery);
+            other.GetComponent<PlayerToStats>().ReportCapture();
 		}
 		else if (collector && collector.CanGrab() && !CollectorOnThisTeam(collector)) {
 			Battery battery = RemoveBattery ();
             if (battery)
             {
                 collector.TakeBattery(battery);
-                other.gameObject.GetComponent<PlayerToStats>().ReportSteal();
+                other.GetComponent<PlayerToStats>().ReportSteal();
             }
 		}
 	}

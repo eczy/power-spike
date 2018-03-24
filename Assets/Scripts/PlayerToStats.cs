@@ -21,7 +21,7 @@ public class PlayerToStats : MonoBehaviour {
         }
     }
 
-    public void ReportDefend()
+    public void ReportCapture()
     {
         if (stats)
         {

@@ -8,6 +8,7 @@ public class OvertimeGoal : MonoBehaviour {
 	public int startBatteries = 0;
 	public Player.Team teamGoal;
 	public int currentBatteries = 0;
+    public GameObject batteryPrefab;
 
 	Animator anim;
 
