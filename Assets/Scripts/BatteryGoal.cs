@@ -7,30 +7,21 @@ public class BatteryGoal : MonoBehaviour {
 	public int maxBatteries = 5;
 	public int startBatteries = 0;
 	public Player.Team teamGoal;
-	int currentBatteries = 0;
+	public int currentBatteries = 0;
 
 	public GameObject batteryPrefab;
 
 	Animator anim;
-	public AudioClip alarmSound;
-	AudioSource audioSource;
+
 
 	void Start () {
-		audioSource = GetComponent<AudioSource> ();
-		audioSource.clip = alarmSound;
 		anim = GetComponent<Animator> ();
-        for (int i = 0; i < startBatteries; i++)
-        {
-            AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
-        }
-		currentBatteries = startBatteries;
+        AddInitialBatteries();
 	}
 
 	void Update() {
 		anim.SetFloat ("numBatteries", currentBatteries);
-		if (!audioSource.isPlaying && currentBatteries == maxBatteries - 1) {
-			audioSource.Play ();
-		}
+
 	}
 
 	void OnTriggerStay(Collider other) {
@@ -39,23 +30,15 @@ public class BatteryGoal : MonoBehaviour {
 		if (collector) {
             Player.Team team = other.gameObject.GetComponent<Player>().team;
 
-            if (collector.CanDrop()) {
-                Battery battery = collector.GetBattery ();
-                collector.RemoveBattery ();
-                AddBattery (battery);
-                if (team == teamGoal)
-                {
-                    other.gameObject.GetComponent<PlayerToStats>().ReportDefend();
-                }
-		    } else if (collector.CanGrab() && team != teamGoal)
+		}
+		else if (collector && collector.CanGrab() && !CollectorOnThisTeam(collector)) {
+			Battery battery = RemoveBattery ();
+            if (battery)
             {
-                Battery battery = RemoveBattery ();
-                if (battery == null)
-                    return;
-                collector.TakeBattery (battery);
+                collector.TakeBattery(battery);
                 other.gameObject.GetComponent<PlayerToStats>().ReportSteal();
             }
-        }
+		}
 	}
 
 	void AddBattery(Battery battery) {
@@ -74,4 +57,18 @@ public class BatteryGoal : MonoBehaviour {
 	public int GetBatteries(){
 		return currentBatteries;
 	}
+
+    bool CollectorOnThisTeam(BatteryCollector collector)
+    {
+        return collector.GetComponent<Player>().team == teamGoal;
+    }
+
+    void AddInitialBatteries()
+    {
+        for (int i = 0; i < startBatteries; i++)
+        {
+            AddBattery(Instantiate(batteryPrefab).GetComponent<Battery>());
+        }
+		currentBatteries = startBatteries;
+    }
 }

@@ -10,18 +10,28 @@ public class Player : MonoBehaviour {
 	public Team team;
 
 	void Start () {
-		if (InputManager.Devices.Count > player_number) {
-			device = InputManager.Devices [player_number];
-		} else {
-			device = null;
-		}
+        PlayerAssignment assignments = FindObjectOfType<PlayerAssignment>();
+
+        if (assignments)
+        {
+            Charge charge = GetComponent<Charge>();
+            player_number = assignments.GetPlayerAssignment(team, charge.charge);
+        }
+
+        UpdateDevice();
 	}
 
 	void Update () {
+        UpdateDevice();
+	}
+
+    void UpdateDevice()
+    {
 		if (InputManager.Devices.Count > player_number) {
 			device = InputManager.Devices [player_number];
 		} else {
 			device = null;
 		}
-	}
+
+    }
 }
