@@ -6,10 +6,8 @@ using UnityEngine;
 public class OneWayColliderTrigger : MonoBehaviour {
 	public Collider platform;
 
-	Collider c;
 	// Use this for initialization
 	void Start () {
-		c = GetComponent<Collider> ();
 		platform.isTrigger = false;
 	}
 

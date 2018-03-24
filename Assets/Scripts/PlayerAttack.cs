@@ -40,6 +40,8 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (p.device == null)
+            return;
         if (p.device.LeftTrigger.WasPressed && !charge_attacking) {
             StartCoroutine (ChargeAttack ());
 		}
