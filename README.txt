@@ -14,3 +14,6 @@ https://freesound.org/people/plasterbrain/sounds/242856/
 Textures and Background:
 https://opengameart.org/content/metal-texture
 https://opengameart.org/content/sci-fi-background
+
+Controller Icons:
+https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack
