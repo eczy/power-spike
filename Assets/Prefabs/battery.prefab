@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 4336195326040340}
   - component: {fileID: 65075214176453274}
   - component: {fileID: 114535789267444392}
+  - component: {fileID: 114265032515435546}
+  - component: {fileID: 114499957033235964}
   m_Layer: 0
   m_Name: battery
   m_TagString: Untagged
@@ -269,6 +271,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.44, z: 1}
   m_Center: {x: 0, y: 0.31, z: 0}
+--- !u!114 &114265032515435546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417532256709096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 411743824, guid: 7c8d774bda0ffb443a85d05ce98120c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replayIdentity: {}
+  prefabIdentity: battery
+  observedComponents:
+  - {fileID: 114499957033235964}
+--- !u!114 &114499957033235964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417532256709096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -864523685, guid: 7c8d774bda0ffb443a85d05ce98120c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replayIdentity: {}
+  lastPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  lastRotation: {x: 0, y: 0, z: 0, w: 1}
+  targetRotation: {x: 0, y: 0, z: 0, w: 1}
+  lastScale: {x: 1, y: 1, z: 1}
+  targetScale: {x: 1, y: 1, z: 1}
+  recordPosition: 1
+  recordRotation: 1
+  recordScale: 0
+  interpolate: 1
+  lowPrecision: 0
 --- !u!114 &114535789267444392
 MonoBehaviour:
   m_ObjectHideFlags: 1
