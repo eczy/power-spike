@@ -2894,7 +2894,9 @@ Prefab:
       propertyPath: teamGoal
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 82160037243969988, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
+    - {fileID: 82449777105545734, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &520619942
@@ -11121,7 +11123,9 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 82160037243969988, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
+    - {fileID: 82449777105545734, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bc92f22647a04485ab29e6d8b1e8f1a4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1864201845
@@ -11438,7 +11442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDown: {fileID: 1774849441}
-  timeLimit: 500
+  timeLimit: 180
 --- !u!114 &1884222700
 MonoBehaviour:
   m_ObjectHideFlags: 0
