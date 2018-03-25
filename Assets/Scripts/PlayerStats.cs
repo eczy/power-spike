@@ -4,40 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour {
+    public string statsName;
+
     public Text deathText;
     public Text stealText;
     public Text captureText;
 
-    private int deaths = 0;
-    private int steals = 0;
-    private int captures = 0;
+    private StatsToUI stats;
+
+    private void Start()
+    {
+        stats = GameObject.Find(statsName).GetComponent<StatsToUI>();
+    }
 
     private void Update()
     {
-        deathText.text   = deaths.ToString();
-        stealText.text   = steals.ToString();
-        captureText.text = captures.ToString();
-    }
-
-    public void Death()
-    {
-        deaths += 1;
-    }
-
-    public void Steal()
-    {
-        steals += 1;
-    }
-
-    public void Capture()
-    {
-        captures += 1;
-    }
-
-    public void Reset()
-    {
-        deaths = 0;
-        steals = 0;
-        captures = 0;
+        deathText.text   = stats.GetDeaths().ToString();
+        stealText.text   = stats.GetSteals().ToString();
+        captureText.text = stats.GetCaptures().ToString();
     }
 }

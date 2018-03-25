@@ -18,11 +18,11 @@ public class GameOver : MonoBehaviour {
 
     private void Start()
     {
-        PlayerStats[] stats = Resources.FindObjectsOfTypeAll<PlayerStats>();
+        StatManager statManager = FindObjectOfType<StatManager>();
 
-        foreach (var stat in stats)
+        if (statManager)
         {
-            stat.Reset();
+            statManager.ResetAllStats();
         }
     }
 

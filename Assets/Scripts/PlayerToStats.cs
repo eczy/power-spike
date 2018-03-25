@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerToStats : MonoBehaviour {
-    public PlayerStats stats;
+    public string statName;
+
+    private StatsToUI stats;
+
+    private void Start()
+    {
+        GameObject statsObject = GameObject.Find(statName);
+        if (statsObject)
+        {
+            stats = statsObject.GetComponent<StatsToUI>();
+        }
+    }
 
     public void ReportDeath()
     {
         if (stats)
         {
-            stats.Death();
+            stats.AddDeath();
         }
     }
 
@@ -17,7 +28,7 @@ public class PlayerToStats : MonoBehaviour {
     {
         if (stats)
         {
-            stats.Steal();
+            stats.AddSteal();
         }
     }
 
@@ -25,7 +36,7 @@ public class PlayerToStats : MonoBehaviour {
     {
         if (stats)
         {
-            stats.Capture();
+            stats.AddCapture();
         }
     }
 }
