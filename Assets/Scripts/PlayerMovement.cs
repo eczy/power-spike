@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float maxJumpBuffer = .2f;
 	float jumpBuffer = 0;
 
+    public bool canMove = true;
 
 	void Awake() {
 		p = GetComponent<Player> ();
@@ -38,14 +39,22 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Update() {
+        if (p.device == null)
+            return;
 		if (p.device.Action1.WasPressed) {
 			jumpBuffer = maxJumpBuffer;
 		}
 	}
 
 	void FixedUpdate() {
+        if (!canMove)
+        {
+            rb.velocity = Vector3.zero;
+            rb.position = rb.position;
+        }
 		Vector3 velocity = rb.velocity;
-
+        if (p.device == null)
+            return;
 		// Horizontal
 		float xInput = p.device.LeftStickX;
 		float targetSpeed = xInput * maxSpeed;

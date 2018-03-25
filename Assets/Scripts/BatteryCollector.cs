@@ -15,7 +15,7 @@ public class BatteryCollector : MonoBehaviour {
 	}
 
 	void Update() {
-		if (player.device.Action2.WasPressed) {
+		if (player.device != null && player.device.Action2.WasPressed) {
 			currentBuffer = grabBuffer;
 		} else {
 			currentBuffer -= Time.deltaTime;

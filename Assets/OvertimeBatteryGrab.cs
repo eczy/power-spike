@@ -16,7 +16,7 @@ public class OvertimeBatteryGrab : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        BatteryCollector collector = other.GetComponent<BatteryCollector>();
+     //   BatteryCollector collector = other.GetComponent<BatteryCollector>();
 
 //        if (collector && collector.CanGrab() && !CollectorOnThisTeam(collector))
  //       {

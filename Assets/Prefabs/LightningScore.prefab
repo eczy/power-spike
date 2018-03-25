@@ -98,6 +98,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4452393517120818}
+  - component: {fileID: 114666808084291390}
   m_Layer: 0
   m_Name: LightningScore
   m_TagString: Untagged
@@ -176,8 +177,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1774636420089990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 10, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4124168151776132}
@@ -218,6 +219,26 @@ MonoBehaviour:
   start: {fileID: 4231609774373218}
   end: {fileID: 4056953232721134}
   width: 1
+--- !u!114 &114666808084291390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774636420089990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb4eafcdd61b424383fc993590e9688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red_batteries: {fileID: 0}
+  blue_batteries: {fileID: 0}
+  red_start: {fileID: 4376822795132460}
+  blue_start: {fileID: 4231609774373218}
+  lightning_middle: {fileID: 4056953232721134}
+  score_change_sound: {fileID: 8300000, guid: d253588e9d5974db7a432c0cbc7fbb53, type: 3}
+  score_change_volume: 0.1
+  red_batteries_text: {fileID: 0}
+  blue_batteries_text: {fileID: 0}
 --- !u!120 &120567948652238024
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -257,19 +278,31 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.48461616
+        value: 0.97276753
+        inSlope: 0.05772288
+        outSlope: 0.05772288
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -345,19 +378,31 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.48461616
+        value: 0.97276753
+        inSlope: 0.05772288
+        outSlope: 0.05772288
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
