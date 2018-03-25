@@ -35,11 +35,11 @@ public class GameOver : MonoBehaviour {
 
 		if (!gameOver && redTeam.GetBatteries () == redTeam.maxBatteries) {
             gameOver = true;
-			gameoverText.text = "Red team wins!\nPress A to restart.";
+			gameoverText.text = "Orange team wins! Press A to restart.";
 			StartCoroutine (LerpScreen ());
 		} else if (!gameOver && blueTeam.GetBatteries () == blueTeam.maxBatteries) {
             gameOver = true;
-			gameoverText.text = "Blue team wins!\nPress A to restart.";
+			gameoverText.text = "Blue team wins! Press A to restart.";
 			StartCoroutine (LerpScreen ());
 		}
 	}
