@@ -8,27 +8,12 @@ public class FloatingIcon : MonoBehaviour {
     [Header("Anchor to object")]
     public GameObject anchorObject;
     public Vector3 anchorOffset;
-    [Space(10)]
 
-    [Header("Anchor to point")]
-    public Vector3 anchorPoint;
-
-    bool isObject = false;
-
-    void Start () {
-        isObject = anchorObject != null;
-	}
+    [Range(0,1)]
+    public float easingFactor  = 0.1f;
 	
 	void Update () {
-        if (isObject)
-        {
-            CheckObjectPosition();
-        }
-        else
-        {
-            SetPosition(anchorPoint);
-        }
-		
+        CheckObjectPosition();
 	}
 
     void CheckObjectPosition()
@@ -43,8 +28,10 @@ public class FloatingIcon : MonoBehaviour {
         SetPosition(anchorPosisition);
     }
 
-    void SetPosition(Vector3 position)
+    void SetPosition(Vector3 targetPosition)
     {
-        transform.position = Camera.main.WorldToScreenPoint(position);
+        Vector3 currentPosition = Camera.main.ScreenToWorldPoint(transform.position);
+        Vector3 nextPosition = Vector3.Lerp(currentPosition, targetPosition, easingFactor);
+        transform.position = Camera.main.WorldToScreenPoint(nextPosition);
     }
 }
