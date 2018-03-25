@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour {
 
     private void Start()
     {
-        PlayerStats[] stats = GetComponentsInChildren<PlayerStats>(true);
+        PlayerStats[] stats = Resources.FindObjectsOfTypeAll<PlayerStats>();
 
         foreach (var stat in stats)
         {
@@ -67,7 +67,7 @@ public class GameOver : MonoBehaviour {
 
     private void ShowStats()
     {
-        StatPanel[] stats = GetComponentsInChildren<StatPanel>(true);
+        StatPanel[] stats = Resources.FindObjectsOfTypeAll<StatPanel>();
 
         foreach (var stat in stats)
         {
