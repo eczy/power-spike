@@ -16,7 +16,17 @@ public class GameOver : MonoBehaviour {
 	private bool screenShown = false;
     private bool gameOver = false;
 
-	private void Update () {
+    private void Start()
+    {
+        PlayerStats[] stats = GetComponentsInChildren<PlayerStats>(true);
+
+        foreach (var stat in stats)
+        {
+            stat.Reset();
+        }
+    }
+
+    private void Update () {
 		if (screenShown) {
 			if (InputManager.ActiveDevice.Action1.WasPressed) {
 				StartCoroutine (LoadAsyncScene (main_menu_scene_name));

@@ -33,4 +33,11 @@ public class PlayerStats : MonoBehaviour {
     {
         captures += 1;
     }
+
+    public void Reset()
+    {
+        deaths = 0;
+        steals = 0;
+        captures = 0;
+    }
 }
