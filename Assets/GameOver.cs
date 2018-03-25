@@ -64,4 +64,8 @@ public class GameOver : MonoBehaviour {
             stat.gameObject.SetActive(true);
         }
     }
+    public bool isGameOver()
+    {
+        return gameOver;
+    }
 }

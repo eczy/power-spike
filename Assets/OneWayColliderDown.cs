@@ -8,7 +8,8 @@ public class OneWayColliderDown : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Player>().device.LeftStickY < -0.5)
+        Player player = other.GetComponent<Player>();
+        if (player != null && player.device != null && player.device.LeftStickY < -0.75f)
         {
             Physics.IgnoreCollision(platform, other, true);
         }
