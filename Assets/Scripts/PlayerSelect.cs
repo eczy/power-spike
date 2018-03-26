@@ -22,7 +22,6 @@ public class PlayerSelect : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        assignments = FindObjectOfType<PlayerAssignment>();
 
 		for (int i = 0; i < players.Length; i++) {
 			players [i].player_number = 100;
@@ -143,6 +142,7 @@ public class PlayerSelect : MonoBehaviour {
 			    players [selections[i]].player_number = i;
 		}
 
+        assignments = FindObjectOfType<PlayerAssignment>();
         foreach (Player player in players)
         {
             if (player.player_number != 100)
