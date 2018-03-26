@@ -9,6 +9,7 @@ public class PlayerAssignment : MonoBehaviour {
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        DestroyOldAssignments();
         assignments = new int[4];
     }
 
@@ -16,12 +17,16 @@ public class PlayerAssignment : MonoBehaviour {
     {
         int playerCode = GetPlayerCode(team, charge);
 
+        Debug.Log("Assign Player " + playerCode.ToString() + " to device " + deviceNumber.ToString());
+
         assignments[playerCode] = deviceNumber;
     }
 
     public int GetPlayerAssignment(Player.Team team, int charge)
     {
         int playerCode = GetPlayerCode(team, charge);
+        
+        Debug.Log("Read Player " + playerCode.ToString() + " to device " + assignments[playerCode].ToString());
 
         return assignments[playerCode];
     }
@@ -55,5 +60,17 @@ public class PlayerAssignment : MonoBehaviour {
         return playerCode;
     }
 
+    void DestroyOldAssignments()
+    {
+        PlayerAssignment[] assignments = FindObjectsOfType<PlayerAssignment>();
+
+        foreach(PlayerAssignment assign in assignments)
+        {
+            if (assign.gameObject != gameObject)
+            {
+                Destroy(assign.gameObject);
+            }
+        }
+    }
 
 }
