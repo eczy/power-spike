@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 672137023}
   anchorOffset: {x: 0, y: 0, z: 0}
-  anchorPoint: {x: 9, y: 1, z: 0}
+  easingFactor: 0.1
 --- !u!114 &27490664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 975994616}
   anchorOffset: {x: 0, y: 0, z: 0}
-  anchorPoint: {x: 9, y: 1, z: 0}
+  easingFactor: 0.1
 --- !u!114 &175267935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2879,7 +2879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 535192338}
   anchorOffset: {x: 0, y: 0, z: 0}
-  anchorPoint: {x: 9, y: 1, z: 0}
+  easingFactor: 0.1
 --- !u!114 &553189620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5168,7 +5168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 628171922}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &955065620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5590,7 +5590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 1013216018}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1023958832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6521,7 +6521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 1387635178}
   anchorOffset: {x: 0, y: 0, z: 0}
-  anchorPoint: {x: 9, y: 1, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1212649945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6983,7 +6983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 424177923}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1256161602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7419,7 +7419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 775528789}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1342892598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8285,7 +8285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 1343651117}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1538707657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10031,7 +10031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 1609511871}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1787172281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10452,7 +10452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 1069121241}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &1872834072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12299,7 +12299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchorObject: {fileID: 414628656}
   anchorOffset: {x: 0, y: 3, z: 0}
-  anchorPoint: {x: 0, y: 0, z: 0}
+  easingFactor: 0.1
 --- !u!114 &2147146244
 MonoBehaviour:
   m_ObjectHideFlags: 0

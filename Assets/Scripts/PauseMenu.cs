@@ -75,6 +75,7 @@ public class PauseMenu : MonoBehaviour {
                 return;
 			}
 			if (!inLoadCoroutine) {
+                Time.timeScale = 1;
 				StartCoroutine (LoadAsyncScene (scene_names [index_active]));
 			}
 		}

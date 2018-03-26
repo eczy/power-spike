@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour {
     IEnumerator CountDown()
     {
         float currentTime = timeLimit;
-        while (currentTime != 0)
+        while (currentTime > 0)
         {
             if (GameObject.Find("black").GetComponent<GameOver>().isGameOver())
             {
