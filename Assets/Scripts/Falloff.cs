@@ -6,7 +6,7 @@ public class Falloff : MonoBehaviour {
 
 	public float falloff_y_value = 0f;
 	public float respawn_time = 0f;
-	public Transform battery_respawn;
+	public Transform[] battery_respawn;
 	public Transform player_spawn;
 
 	Vector3 original_position;
@@ -26,7 +26,7 @@ public class Falloff : MonoBehaviour {
 		Battery bat = GetComponent<BatteryCollector> ().GetBattery ();
 		if (bat != null) {
 			GetComponent<BatteryCollector> ().RemoveBattery ();
-			bat.transform.position = battery_respawn.position;
+			bat.transform.position = GetClosestBatterySpawn(bat.transform.position);
 		}
 
 		Renderer r = GetComponent<Renderer> ();
@@ -55,6 +55,24 @@ public class Falloff : MonoBehaviour {
 		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
 			rend.enabled = true;
 		transform.forward = player_spawn.forward;
-		health.health = health.max_health;
+        if (health != null)
+		    health.health = health.max_health;
 	}
+
+    Vector3 GetClosestBatterySpawn(Vector3 position)
+    {
+        Vector3 nearest = Vector3.zero;
+        float min_dist = Mathf.Infinity;
+        for (int i = 0; i < battery_respawn.Length; i++)
+        {
+            float dist = Vector3.Distance(position, battery_respawn[i].position);
+
+            if (dist < min_dist)
+            {
+                min_dist = dist;
+                nearest = battery_respawn[i].position;
+            }
+        }
+        return nearest;
+    }
 }

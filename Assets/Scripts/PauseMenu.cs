@@ -10,13 +10,13 @@ public class PauseMenu : MonoBehaviour {
 	public Text[] texts;
 	public string[] scene_names;
 	public float[] delays;
-	public float input_delay = 1f;
+    public float input_delay = 1f;
 
-	public bool get_input = true;
-	public int index_active = 0;
+	bool get_input = true;
+	int index_active = 0;
 	bool inLoadCoroutine = false;
-	public bool paused = false;
-	Coroutine co;
+    bool paused = false;
+    float t = 0;
 
 	void Start(){
 		index_active = 0;
@@ -24,6 +24,12 @@ public class PauseMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        t += Time.unscaledDeltaTime;
+        if (t < input_delay)
+            get_input = false;
+        else
+            get_input = true;
+
 		InputDevice device = InputManager.ActiveDevice;
 		if (device.MenuWasPressed) {
 			if (paused == false) {
@@ -48,19 +54,15 @@ public class PauseMenu : MonoBehaviour {
 			index_active += 1;
 			if (index_active >= texts.Length)
 				index_active = texts.Length-1;
-			co = StartCoroutine (DelayInput ());
-		} else if (device.Direction.Y > 0 && get_input) {
+            t = 0;
+        } else if (device.Direction.Y > 0 && get_input) {
 			index_active -= 1;
 			if (index_active < 0)
 				index_active = 0;
-			co = StartCoroutine (DelayInput ());
+            t = 0;
 		}
-
-		if (device.Action1.WasPressed) {
+        else if (device.Action1.WasPressed) {
 			Debug.Log("Active Index: " + index_active);
-			if (co != null)
-				StopCoroutine (co);
-			get_input = false;
 
 			if (index_active == texts.Length - 1) {
 				Debug.Log ("Exiting");
@@ -69,6 +71,8 @@ public class PauseMenu : MonoBehaviour {
 			} else if (index_active == 0) {
 				paused = !paused;
 				pause_menu.SetActive (false);
+                Time.timeScale = 1;
+                return;
 			}
 			if (!inLoadCoroutine) {
 				StartCoroutine (LoadAsyncScene (scene_names [index_active]));
@@ -77,8 +81,10 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	IEnumerator DelayInput(){
+        Debug.Log("Disabling input");
 		get_input = false;
 		yield return new WaitForSeconds (input_delay);
+        Debug.Log("enabling input");
 		get_input = true;
 	}
 

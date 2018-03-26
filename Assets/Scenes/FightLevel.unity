@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -540,6 +540,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: battery_respawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6
@@ -576,7 +581,7 @@ Prefab:
         type: 2}
       propertyPath: battery_respawn
       value: 
-      objectReference: {fileID: 1424129851}
+      objectReference: {fileID: 0}
     - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
         type: 2}
       propertyPath: player_spawn
@@ -612,6 +617,21 @@ Prefab:
       propertyPath: statName
       value: Blue Negative
       objectReference: {fileID: 0}
+    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424129851}
+    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 789578333}
+    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1976128681}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
@@ -4129,6 +4149,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788373613}
+--- !u!1 &789578332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 789578333}
+  m_Layer: 0
+  m_Name: BatteryRespawnRed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &789578333
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 789578332}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30.23, y: 2.9, z: 0.1076107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1943172775}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793229478
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,6 +5799,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: battery_respawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -5787,7 +5840,7 @@ Prefab:
         type: 2}
       propertyPath: battery_respawn
       value: 
-      objectReference: {fileID: 1424129851}
+      objectReference: {fileID: 0}
     - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
         type: 2}
       propertyPath: player_spawn
@@ -5823,6 +5876,21 @@ Prefab:
       propertyPath: statName
       value: Blue Positive
       objectReference: {fileID: 0}
+    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424129851}
+    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 789578333}
+    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1976128681}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
   m_IsPrefabParent: 0
@@ -6069,6 +6137,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: battery_respawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: c91802a91986f4458823fc935abda372, type: 2}
       propertyPath: m_LocalPosition.x
       value: -36
@@ -6105,7 +6178,7 @@ Prefab:
         type: 2}
       propertyPath: battery_respawn
       value: 
-      objectReference: {fileID: 1424129851}
+      objectReference: {fileID: 0}
     - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
         type: 2}
       propertyPath: player_spawn
@@ -6146,6 +6219,21 @@ Prefab:
       propertyPath: statName
       value: Red Positive
       objectReference: {fileID: 0}
+    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424129851}
+    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 789578333}
+    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1976128681}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -7036,10 +7124,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  input_delay: 0.25
-  get_input: 1
-  index_active: 0
-  paused: 0
+  input_delay: 0.2
 --- !u!4 &1312444425
 Transform:
   m_ObjectHideFlags: 0
@@ -8058,7 +8143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424129851}
   m_Layer: 0
-  m_Name: BatteryRespawn
+  m_Name: BatteryRespawnMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12102,6 +12187,8 @@ Transform:
   - {fileID: 894606787}
   - {fileID: 1585737193}
   - {fileID: 562635893}
+  - {fileID: 789578333}
+  - {fileID: 1976128681}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12201,6 +12288,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: battery_respawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -33
@@ -12237,7 +12329,7 @@ Prefab:
         type: 2}
       propertyPath: battery_respawn
       value: 
-      objectReference: {fileID: 1424129851}
+      objectReference: {fileID: 0}
     - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
         type: 2}
       propertyPath: player_spawn
@@ -12278,6 +12370,21 @@ Prefab:
       propertyPath: statName
       value: Red Negative
       objectReference: {fileID: 0}
+    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1424129851}
+    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 789578333}
+    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: battery_respawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1976128681}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
   m_IsPrefabParent: 0
@@ -12531,6 +12638,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6afbda4b2fb95bc47a16a0dcb9a13569, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1976128680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1976128681}
+  m_Layer: 0
+  m_Name: BatteryRespawnBlue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1976128681
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976128680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.23, y: 2.9, z: 0.1076107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1943172775}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1994825537
 Prefab:
   m_ObjectHideFlags: 0
