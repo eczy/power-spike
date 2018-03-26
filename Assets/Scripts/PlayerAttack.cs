@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour {
 	public float cooldown = 1f;
 	public AudioClip electric_sound;
 	public float sound_volume = 1f;
+    public float charge_radius = 1f;
 
 	[Header("Punch Parameters")]
 	public Fist left;
@@ -35,6 +36,9 @@ public class PlayerAttack : MonoBehaviour {
 		em = charge_system.emission;
 		charge = GetComponent<Charge> ();
 
+        ParticleSystem.ShapeModule shape = charge_system.shape;
+        shape.radius = charge_radius;
+
 		em.enabled = false;
 	}
 	
@@ -58,7 +62,7 @@ public class PlayerAttack : MonoBehaviour {
 
 		AudioSource.PlayClipAtPoint (electric_sound, Camera.main.transform.position, sound_volume);
 
-		Collider[] colliders = Physics.OverlapSphere(transform.position, charge_system.shape.radius);
+		Collider[] colliders = Physics.OverlapSphere(transform.position, charge_radius);
 		foreach (Collider hit in colliders)
 		{
 			if (hit.GetComponent<Charge>() == null || hit.gameObject == this.gameObject || hit.transform.IsChildOf(this.transform))
