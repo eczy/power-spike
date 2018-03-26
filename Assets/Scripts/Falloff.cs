@@ -34,11 +34,15 @@ public class Falloff : MonoBehaviour {
 		PlayerAttack a = GetComponent<PlayerAttack> ();
 		Hitbox h = GetComponent<Hitbox> ();
 		Health health = GetComponent<Health> ();
+        Rigidbody rb = GetComponent<Rigidbody>();
+        Collider coll = GetComponent<Collider>();
 
 		r.enabled = false;
 		m.enabled = false;
 		a.enabled = false;
 		h.enabled = false;
+        coll.enabled = false;
+        rb.isKinematic = true;
 		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
 			rend.enabled = false;
 
@@ -52,6 +56,8 @@ public class Falloff : MonoBehaviour {
 		m.enabled = true;
 		a.enabled = true;
 		h.enabled = true;
+        coll.enabled = true;
+        rb.isKinematic = false;
 		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
 			rend.enabled = true;
 		transform.forward = player_spawn.forward;
