@@ -17,8 +17,6 @@ public class PlayerAssignment : MonoBehaviour {
     {
         int playerCode = GetPlayerCode(team, charge);
 
-        Debug.Log("Assign Player " + playerCode.ToString() + " to device " + deviceNumber.ToString());
-
         assignments[playerCode] = deviceNumber;
     }
 
@@ -26,8 +24,6 @@ public class PlayerAssignment : MonoBehaviour {
     {
         int playerCode = GetPlayerCode(team, charge);
         
-        Debug.Log("Read Player " + playerCode.ToString() + " to device " + assignments[playerCode].ToString());
-
         return assignments[playerCode];
     }
 
