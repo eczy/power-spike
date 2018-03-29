@@ -16,16 +16,6 @@ public class GameOver : MonoBehaviour {
 	private bool screenShown = false;
     private bool gameOver = false;
 
-    private void Start()
-    {
-        StatManager statManager = FindObjectOfType<StatManager>();
-
-        if (statManager)
-        {
-            statManager.ResetAllStats();
-        }
-    }
-
     private void Update () {
 		if (screenShown) {
 			if (InputManager.ActiveDevice.Action1.WasPressed) {

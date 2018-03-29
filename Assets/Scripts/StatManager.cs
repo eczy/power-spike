@@ -3,24 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StatManager : MonoBehaviour {
-    private void Awake()
-    {
-        StatManager[] stats = FindObjectsOfType<StatManager>();
+    private static StatManager original;
 
-        foreach (StatManager stat in stats)
-        {
-            if (gameObject != stat.gameObject)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
     private void Start()
     {
+        if (original == null)
+        {
+            original = this;
+        }
+
+        if (original != this)
+        {
+            Destroy(gameObject);
+        }
+
+        if (GetComponent<ResetStats>())
+        {
+            ResetAllStats();
+        }
+
         DontDestroyOnLoad(gameObject);
     }
 
-    public void ResetAllStats()
+    private void ResetAllStats()
     {
         foreach (StatsToUI stat in GetComponentsInChildren<StatsToUI>()) {
             stat.ResetStats();
