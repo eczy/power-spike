@@ -30,6 +30,7 @@ sysinfo.txt
 /*.app/
 /*_Data/
 *.7z
+*.zip
 *.apk
 *.exe
 *.unitypackage

@@ -38,7 +38,8 @@ public class Hitbox : MonoBehaviour {
         Knockback knock = GetComponent<Knockback>();
         if (hurt != null)
         {
-			health.Hurt (hurt.damage);
+            if (health != null)
+			    health.Hurt (hurt.damage);
 			if (Camera.main.GetComponent<NickShake> () != null)
 				Camera.main.GetComponent<NickShake> ().AddTrauma (traumaOnHit);
             if (collect != null && collect.GetBattery() != null) {

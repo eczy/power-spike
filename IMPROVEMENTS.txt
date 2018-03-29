@@ -16,3 +16,11 @@ IMPROVEMENTS SINCE GAMEJAM (@austin and thomas):
 - Red respawner is oriented correctly now
 - Music loops on main menu and in fighting level
 - You can now play without 4 players being selected (at least one needs to be selected though). Unselected players do not have a controller and do nothing.
+
+IMPROVEMENTS FOR ALPHA:
+- Added tutorial level for lots of guidance because that was one of our largest complaints
+- Added stats screen for end of game to give players closure
+- Added one way platforms to improve player mobility
+- Added game timer to limit game time and overtime mechanic to resolve ties
+- Added charges above players heads
+- Added pause screen.
