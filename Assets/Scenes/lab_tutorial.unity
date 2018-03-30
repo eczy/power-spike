@@ -1973,6 +1973,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: charge_radius
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -4231,6 +4236,11 @@ Prefab:
     - target: {fileID: 1836290090692342, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: charge_radius
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
@@ -6929,6 +6939,11 @@ Prefab:
     - target: {fileID: 1836290090692342, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: charge_radius
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
@@ -11118,6 +11133,11 @@ Prefab:
     - target: {fileID: 1836290090692342, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: charge_radius
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
