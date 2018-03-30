@@ -1033,7 +1033,7 @@ Prefab:
     - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
         type: 2}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
         type: 2}
@@ -11367,7 +11367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   black: {fileID: 788904308}
-  progress: 0
+  progress: 1
 --- !u!1001 &1732164579
 Prefab:
   m_ObjectHideFlags: 0

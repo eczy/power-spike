@@ -18,7 +18,6 @@ public class SceneTransitionEffect : MonoBehaviour {
         {
             GetBlackImage();
         }
-        progress = 0.0f;
     }
 
     private void Update()
