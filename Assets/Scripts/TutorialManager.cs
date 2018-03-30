@@ -19,7 +19,7 @@ public class TutorialManager : MonoBehaviour {
         if (!ready && CheckPlayersReady())
         {
             ready = true;
-            SceneManager.LoadScene(nextScene);
+            SceneTransitionController.RequestSceneTransition(nextScene, 2f);
         }
 	}
 

@@ -76,7 +76,7 @@ public class PauseMenu : MonoBehaviour {
 			}
 			if (!inLoadCoroutine) {
                 Time.timeScale = 1;
-				StartCoroutine (LoadAsyncScene (scene_names [index_active]));
+                SceneTransitionController.RequestSceneTransition(scene_names[index_active], 1f);
 			}
 		}
 	}
@@ -87,17 +87,5 @@ public class PauseMenu : MonoBehaviour {
 		yield return new WaitForSeconds (input_delay);
         Debug.Log("enabling input");
 		get_input = true;
-	}
-
-	IEnumerator LoadAsyncScene(string scene_name){
-		Debug.Log ("Loading " + scene_name);
-		inLoadCoroutine = true;
-		yield return new WaitForSeconds (delays [index_active]);
-
-		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync (scene_name);
-
-		while (!asyncLoad.isDone)
-			yield return null;
-		inLoadCoroutine = false;
 	}
 }
