@@ -23,11 +23,6 @@ public class MainMenuManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        for (int i = 0; i < texts.Length; i++)
-        {
-            texts[i].color = Color.black;
-        }
-        texts[index_active].color = Color.red;
         InputDevice device = InputManager.ActiveDevice;
 		if (device.Direction.Y < 0 && get_input) {
 			index_active += 1;
@@ -47,12 +42,6 @@ public class MainMenuManager : MonoBehaviour {
 				StopCoroutine (co);
 			get_input = false;
 
-            if (index_active == texts.Length - 1)
-            {
-                Debug.Log("Exiting");
-                Application.Quit();
-                return;
-            }
 			if (!inLoadCoroutine) {
 				StartCoroutine (LoadAsyncScene (scene_names [index_active]));
 			}
