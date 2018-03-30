@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b6b663d9fbe00094d98be3c4c8b4015d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mina
+  fontNames:
+  - Mina
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5af681d7305a9bd44a7562a121a86b38, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

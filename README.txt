@@ -17,3 +17,7 @@ https://opengameart.org/content/sci-fi-background
 
 Controller Icons:
 https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack
+
+Fonts:
+https://fonts.google.com/specimen/Mina?selection.family=Mina:400,700
+https://fonts.google.com/specimen/Roboto?selection.family=Roboto:400,400i,700,700i

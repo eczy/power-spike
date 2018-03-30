@@ -7284,24 +7284,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 90
-  player_buttons:
+  playerButtons:
   - {fileID: 100211687}
   - {fileID: 700323349}
   - {fileID: 1190550624}
   - {fileID: 1049416496}
-  player_select_areas:
+  playerSelectAreas:
   - {fileID: 1935612757}
   - {fileID: 34264008}
   - {fileID: 939273229}
   - {fileID: 585614066}
-  auto_select: 0
+  autoSelect: 0
   players:
   - {fileID: 889162180}
   - {fileID: 1243235152}
   - {fileID: 14466464}
   - {fileID: 312317299}
-  press_start_text: {fileID: 1254522807}
-  text_switch_delay: 1
+  pressStartText: {fileID: 1254522807}
+  textSwitchDelay: 1
+  selectedColor: {r: 0.71300006, g: 0.71300006, b: 0.71300006, a: 1}
 --- !u!4 &1312920049
 Transform:
   m_ObjectHideFlags: 0
