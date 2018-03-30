@@ -54,7 +54,7 @@ public class MainMenuManager : MonoBehaviour {
                 return;
             }
 			if (!inLoadCoroutine) {
-				StartCoroutine (LoadAsyncScene (scene_names [index_active]));
+                SceneTransitionController.RequestSceneTransition(scene_names[index_active], 2f);
 			}
 		}
 	}
@@ -63,17 +63,5 @@ public class MainMenuManager : MonoBehaviour {
 		get_input = false;
 		yield return new WaitForSeconds (input_delay);
 		get_input = true;
-	}
-
-	IEnumerator LoadAsyncScene(string scene_name){
-		Debug.Log ("Loading " + scene_name);
-		inLoadCoroutine = true;
-		yield return new WaitForSeconds (delays [index_active]);
-
-		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync (scene_name);
-
-		while (!asyncLoad.isDone)
-			yield return null;
-		inLoadCoroutine = false;
 	}
 }

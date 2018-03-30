@@ -29,7 +29,7 @@ public class GameOver : MonoBehaviour {
     private void Update () {
 		if (screenShown) {
 			if (InputManager.ActiveDevice.Action1.WasPressed) {
-				StartCoroutine (LoadAsyncScene (main_menu_scene_name));
+                SceneTransitionController.RequestSceneTransition(main_menu_scene_name, 1f);
 			}
 		}
 
@@ -54,15 +54,6 @@ public class GameOver : MonoBehaviour {
 	
 		screenShown = true;
         ShowStats();
-	}
-
-	IEnumerator LoadAsyncScene(string scene_name){
-		Debug.Log ("Loading " + scene_name);
-
-		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync (scene_name);
-
-		while (!asyncLoad.isDone)
-			yield return null;
 	}
 
     private void ShowStats()
