@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -390,11 +390,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: battery_respawn.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6
@@ -429,46 +424,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
         type: 2}
-      propertyPath: battery_respawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: player_spawn
-      value: 
-      objectReference: {fileID: 1810362763}
-    - target: {fileID: 114355056694035688, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114244905220124910, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 368656575}
-    - target: {fileID: 114984756008772962, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: player_number
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114244905220124910, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: statName
-      value: Blue Negative
-      objectReference: {fileID: 0}
-    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
       propertyPath: battery_respawn.Array.data[0]
       value: 
       objectReference: {fileID: 1424129851}
@@ -482,16 +437,11 @@ Prefab:
       propertyPath: battery_respawn.Array.data[2]
       value: 
       objectReference: {fileID: 1976128681}
-    - target: {fileID: 114281004862664650, guid: 6dac0a426aa224a379b11f943508ee29,
+    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
         type: 2}
-      propertyPath: charge_radius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114208464812442520, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: acceleration
-      value: 70
-      objectReference: {fileID: 0}
+      propertyPath: player_spawn
+      value: 
+      objectReference: {fileID: 1810362763}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
@@ -806,7 +756,7 @@ Prefab:
     - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
         type: 2}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
         type: 2}
@@ -821,6 +771,10 @@ Prefab:
     - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
         type: 2}
       propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822911709040518, guid: f3848dd235e301143a6d3ef2250d1288, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5801,11 +5755,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: battery_respawn.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -5840,46 +5789,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
         type: 2}
-      propertyPath: battery_respawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: player_spawn
-      value: 
-      objectReference: {fileID: 1810362763}
-    - target: {fileID: 114355056694035688, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114546404574610902, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 75913287}
-    - target: {fileID: 114984756008772962, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: player_number
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114546404574610902, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: statName
-      value: Blue Positive
-      objectReference: {fileID: 0}
-    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
       propertyPath: battery_respawn.Array.data[0]
       value: 
       objectReference: {fileID: 1424129851}
@@ -5893,16 +5802,11 @@ Prefab:
       propertyPath: battery_respawn.Array.data[2]
       value: 
       objectReference: {fileID: 1976128681}
-    - target: {fileID: 114281004862664650, guid: 9aee6835825594dd98ac5776123bef98,
+    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
         type: 2}
-      propertyPath: charge_radius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114208464812442520, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: acceleration
-      value: 70
-      objectReference: {fileID: 0}
+      propertyPath: player_spawn
+      value: 
+      objectReference: {fileID: 1810362763}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
   m_IsPrefabParent: 0
@@ -6125,11 +6029,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: battery_respawn.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: c91802a91986f4458823fc935abda372, type: 2}
       propertyPath: m_LocalPosition.x
       value: -36
@@ -6164,51 +6063,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
         type: 2}
-      propertyPath: battery_respawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: player_spawn
-      value: 
-      objectReference: {fileID: 2024812947}
-    - target: {fileID: 114984756008772962, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355056694035688, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114805827616833044, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 1641206469}
-    - target: {fileID: 114984756008772962, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: player_number
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114805827616833044, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: statName
-      value: Red Positive
-      objectReference: {fileID: 0}
-    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
       propertyPath: battery_respawn.Array.data[0]
       value: 
       objectReference: {fileID: 1424129851}
@@ -6222,41 +6076,11 @@ Prefab:
       propertyPath: battery_respawn.Array.data[2]
       value: 
       objectReference: {fileID: 1976128681}
-    - target: {fileID: 198598989565806356, guid: c91802a91986f4458823fc935abda372,
+    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
         type: 2}
-      propertyPath: randomSeed
-      value: -1320290591
-      objectReference: {fileID: 0}
-    - target: {fileID: 198598989565806356, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 198598989565806356, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: attack_rate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: charge_radius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114208464812442520, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: acceleration
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 114983409745183492, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: player_spawn
+      value: 
+      objectReference: {fileID: 2024812947}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -10075,7 +9899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   black: {fileID: 788904308}
-  progress: 0
+  progress: 1
 --- !u!1001 &1732164579
 Prefab:
   m_ObjectHideFlags: 0
@@ -11260,7 +11084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1884222698
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11956,11 +11780,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: battery_respawn.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4114276565226322, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -33
@@ -11995,51 +11814,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
         type: 2}
-      propertyPath: battery_respawn
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: player_spawn
-      value: 
-      objectReference: {fileID: 2024812947}
-    - target: {fileID: 114984756008772962, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355056694035688, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: knockback_force
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 54055413981681638, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: punch_distance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114919319220671190, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 1783040550}
-    - target: {fileID: 114208464812442520, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: maxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114919319220671190, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: statName
-      value: Red Negative
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
       propertyPath: battery_respawn.Array.data[0]
       value: 
       objectReference: {fileID: 1424129851}
@@ -12053,46 +11827,11 @@ Prefab:
       propertyPath: battery_respawn.Array.data[2]
       value: 
       objectReference: {fileID: 1976128681}
-    - target: {fileID: 198598989565806356, guid: a804a1ff33d69489097a1f87ec42e62e,
+    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
         type: 2}
-      propertyPath: randomSeed
-      value: 42568038
-      objectReference: {fileID: 0}
-    - target: {fileID: 198598989565806356, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 198598989565806356, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 198598989565806356, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: attack_rate
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: rest_rate
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: charge_radius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114208464812442520, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: acceleration
-      value: 70
-      objectReference: {fileID: 0}
+      propertyPath: player_spawn
+      value: 
+      objectReference: {fileID: 2024812947}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
   m_IsPrefabParent: 0

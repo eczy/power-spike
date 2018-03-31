@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class PlayerAssignment : MonoBehaviour {
 
+    static PlayerAssignment singleton;
+
     int[] assignments;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        DestroyOldAssignments();
+        if (singleton && singleton != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            singleton = this;
+            DontDestroyOnLoad(gameObject);
+        }
         assignments = new int[4];
     }
 
