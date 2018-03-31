@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour {
         float currentTime = timeLimit;
         while (currentTime > 0)
         {
-            if (GameObject.Find("black").GetComponent<GameOver>().isGameOver())
+            if (FindObjectOfType<GameOver>().isGameOver())
             {
                 gameObject.SetActive(false);
                 yield break;
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour {
             countDown.text = SecondsToMinuteSeconds((int)currentTime);
             yield return null;
         }
-        if (GameObject.Find("black").GetComponent<GameOver>().isGameOver())
+        if (FindObjectOfType<GameOver>().isGameOver())
         {
             gameObject.SetActive(false);
             yield break;

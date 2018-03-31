@@ -50,7 +50,7 @@ public class GameOver : MonoBehaviour {
     {
         StatPanel[] stats = Resources.FindObjectsOfTypeAll<StatPanel>();
 
-        foreach (var stat in stats)
+        foreach (StatPanel stat in stats)
         {
             stat.gameObject.SetActive(true);
         }

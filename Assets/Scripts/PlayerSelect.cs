@@ -14,6 +14,7 @@ public class PlayerSelect : MonoBehaviour {
 	[Header("Order: red pos, red neg, blue pos, blue neg")]
 	public Player[] players;
 	public Text pressStartText;
+    public Text pressStartTextShadow;
 	public float textSwitchDelay = 1f;
     public Color selectedColor;
 
@@ -105,6 +106,7 @@ public class PlayerSelect : MonoBehaviour {
 			r.gameObject.SetActive (false);
         }
 
+        pressStartTextShadow.gameObject.SetActive(false);
         pressStartText.transform.position = Camera.main.WorldToScreenPoint(Vector3.zero);
 		pressStartText.text = "READY";
 
