@@ -32,7 +32,12 @@ public class Fist : MonoBehaviour {
 		hurt.damage = damage;
 		anim.enabled = false;
 		coll.enabled = true;
-		yield return null;
+        if (hit && jab_sound && !played_hit_sound)
+        {
+            AudioSource.PlayClipAtPoint(jab_sound, transform.position, jab_volume);
+            played_hit_sound = true;
+        }
+        yield return null;
 
 		float t = 0;
 		Vector3 start_pos = transform.localPosition;
