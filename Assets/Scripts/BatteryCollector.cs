@@ -48,10 +48,12 @@ public class BatteryCollector : MonoBehaviour {
 	}
 
 	public void TakeBattery(Battery battery) {
-		battery.SetOwner (gameObject);
-		thisBattery = battery;
-		currentBuffer = 0;
-        EventManager.Trigger("BatteryPickupEvent");
+		if (battery.SetOwner (gameObject))
+        {
+		    thisBattery = battery;
+		    currentBuffer = 0;
+            EventManager.Trigger("BatteryPickupEvent");
+        }
 	}
 
 	public bool CanGrab() {

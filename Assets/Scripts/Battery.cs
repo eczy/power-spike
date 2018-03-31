@@ -8,15 +8,6 @@ public class Battery : MonoBehaviour {
 
 	bool onCooldown = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
     void StartCooldown() {
 		StartCoroutine (CooldownRoutine());
 	}
@@ -27,12 +18,23 @@ public class Battery : MonoBehaviour {
 		onCooldown = false;
 	}
 
-	public void SetOwner(GameObject owner) {
+	public bool SetOwner(GameObject owner) {
 		if (onCooldown)
-			return;
-		
+			return false;
+
+        ResetOwner();
 		transform.parent = owner.transform;
 		transform.localPosition = Vector3.up * 2;
 		StartCooldown ();
+        return true;
 	}
+
+    public void ResetOwner()
+    {
+        BatteryCollector parent = GetComponentInParent<BatteryCollector>();
+        if (parent)
+        {
+            parent.RemoveBattery();
+        } 
+    }
 }

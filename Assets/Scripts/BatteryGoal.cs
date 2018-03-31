@@ -21,7 +21,6 @@ public class BatteryGoal : MonoBehaviour {
 
 	void Update() {
 		anim.SetFloat ("numBatteries", currentBatteries);
-
 	}
 
 	void OnTriggerStay(Collider other) {
