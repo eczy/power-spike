@@ -1,62 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using InControl;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class GameOver : MonoBehaviour {
-	public string main_menu_scene_name;
+	public string statScene;
 	public BatteryGoal redTeam;
 	public BatteryGoal blueTeam;
-	public Text gameoverText;
-	public Image black;
-	public float lerpDuration = 1f;
-
-	private bool screenShown = false;
-    private bool gameOver = false;
-
-    private void Update () {
-		if (screenShown) {
-			if (InputManager.ActiveDevice.Action1.WasPressed) {
-                SceneTransitionController.RequestSceneTransition(main_menu_scene_name, 1f);
-			}
-		}
-
-		if (!gameOver && redTeam.GetBatteries () == redTeam.maxBatteries) {
-            gameOver = true;
-			gameoverText.text = "Orange team wins! Press A to restart.";
-			StartCoroutine (LerpScreen ());
-		} else if (!gameOver && blueTeam.GetBatteries () == blueTeam.maxBatteries) {
-            gameOver = true;
-			gameoverText.text = "Blue team wins! Press A to restart.";
-			StartCoroutine (LerpScreen ());
-		}
-	}
-
-	private IEnumerator LerpScreen()
-	{
-		for (float time = 0; time < lerpDuration; time += Time.deltaTime) {
-			black.color = Color.Lerp (Color.clear, Color.black, time/lerpDuration);
-			gameoverText.color = Color.Lerp (Color.clear, Color.white, time/lerpDuration);
-			yield return null;
-		}
 	
-		screenShown = true;
-        ShowStats();
+    private void Update () {
+		if (redTeam.GetBatteries () == redTeam.maxBatteries) {
+			EndGame(Team.Red);
+		} else if (blueTeam.GetBatteries () == blueTeam.maxBatteries) {
+			EndGame(Team.Blue);
+		}
 	}
-
-    private void ShowStats()
+	
+    private void EndGame(Team winningTeam)
     {
-        StatPanel[] stats = Resources.FindObjectsOfTypeAll<StatPanel>();
-
-        foreach (StatPanel stat in stats)
-        {
-            stat.gameObject.SetActive(true);
-        }
+	    StatManager.SetWinningTeam(winningTeam);
+	    SceneTransitionController.RequestSceneTransition(statScene, 1f);
     }
-    public bool isGameOver()
-    {
-        return gameOver;
-    }
+	
 }

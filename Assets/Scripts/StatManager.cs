@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StatManager : MonoBehaviour {
     private static StatManager original;
+    private static Team winningTeam;
 
     private void Start()
     {
@@ -30,5 +29,15 @@ public class StatManager : MonoBehaviour {
         foreach (StatsToUI stat in GetComponentsInChildren<StatsToUI>()) {
             stat.ResetStats();
         }
+    }
+
+    public static void SetWinningTeam(Team team)
+    {
+        winningTeam = team;
+    }
+
+    public static Team GetWinningTeam()
+    {
+        return winningTeam;
     }
 }

@@ -17,3 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overtime.unity
     guid: 0e12eca19f6e542748d9911163a60cc8
+  - enabled: 1
+    path: Assets/Scenes/ScoreScene.unity
+    guid: d6bd2ae38e8cd0c4aa916d56a19f1beb
+  m_configObjects: {}
