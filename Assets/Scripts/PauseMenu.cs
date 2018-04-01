@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using InControl;
 
 public class PauseMenu : MonoBehaviour {
-	public GameObject pauseMenu;
-	public Text[] texts;
+	public RectTransform pauseMenu;
+	public Image[] options;
 	public string[] sceneNames;
     public float inputDelay = 1f;
 	public Color activeColor;
@@ -19,24 +19,26 @@ public class PauseMenu : MonoBehaviour {
 	private Color inactiveColor;
 	private Vector3 shownPosition;
 	private Vector3 hiddenPosition;
+	private bool menuHidden;
 
 	private void Start(){
 		try
 		{
-			inactiveColor = texts[0].color;
+			inactiveColor = options[0].color;
 		}
 		catch (NullReferenceException)
 		{
 			inactiveColor = Color.white;
 		}
 
-		shownPosition = pauseMenu.transform.position;
+		shownPosition = pauseMenu.anchoredPosition;
 		hiddenPosition = shownPosition;
 		
-		// I have no clue why this is divided by 2 but it seems to work
-		hiddenPosition.x = hiddenPosition.x - pauseMenu.GetComponent<RectTransform>().rect.width / 2;
+		float width = pauseMenu.rect.width;
+		
+		hiddenPosition.x = hiddenPosition.x - width;
 
-		pauseMenu.transform.position = hiddenPosition;
+		pauseMenu.anchoredPosition = hiddenPosition;
 	}
 
 	private void Update () {
@@ -100,25 +102,25 @@ public class PauseMenu : MonoBehaviour {
 
 	private void ScrollUp()
 	{
-		indexActive = (int) Mathf.Repeat(indexActive - 1, texts.Length);
+		indexActive = (int) Mathf.Repeat(indexActive - 1, options.Length);
         delayCounter = 0;
 	}
 
 	private void ScrollDown()
 	{
-		indexActive = (int) Mathf.Repeat(indexActive + 1, texts.Length);
-		texts[indexActive].color = activeColor;
+		indexActive = (int) Mathf.Repeat(indexActive + 1, options.Length);
+		options[indexActive].color = activeColor;
         delayCounter = 0;
 	}
 	
 	private void UpdateColors()
 	{
-		foreach (Text text in texts)
+		foreach (Image option in options)
 		{
-			text.color = inactiveColor;
+			option.color = inactiveColor;
 		}
 		
-		texts[indexActive].color = activeColor;
+		options[indexActive].color = activeColor;
 	}
 
 	private IEnumerator ShowMenu(bool show)
@@ -142,12 +144,14 @@ public class PauseMenu : MonoBehaviour {
 		{
 			float progress = time / lerpDuration;
 
-			Vector3 newPosition = pauseMenu.transform.position;
+			Vector3 newPosition = pauseMenu.anchoredPosition;
 			newPosition.x = Mathf.Lerp(startPosition.x, endPosition.x, progress);
 
-			pauseMenu.transform.position = newPosition;
+			pauseMenu.anchoredPosition = newPosition;
 			time += Time.unscaledDeltaTime;
 			yield return null;
 		}
+
+		pauseMenu.anchoredPosition = endPosition;
 	}
 }
