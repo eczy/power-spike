@@ -30,7 +30,7 @@ public class Hitbox : MonoBehaviour {
     {
         if (invincible)
             return;
-        else
+        else if (invincibility_time > 0f)
             StartCoroutine(IFrames());
 		Health health = GetComponent<Health> ();
         Hurtbox hurt = collision.collider.GetComponent<Hurtbox>();

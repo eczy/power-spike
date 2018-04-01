@@ -20,6 +20,7 @@ public class Knockback : MonoBehaviour {
 
     public void Knock(Vector3 direction)
     {
+        Debug.Log("Knocking back " + gameObject.name);
 		rb.AddForce (knockback_force * direction, ForceMode.Impulse);
     }
 }

@@ -763,8 +763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jab_sound: {fileID: 8300000, guid: 802b28678a34d403abaad3811abfd655, type: 3}
   miss_sound: {fileID: 8300000, guid: c9418ac59e6434f2eabe1edfc68d1bbd, type: 3}
-  jab_volume: 1
-  miss_volume: 1
+  jab_volume: 0.2
+  miss_volume: 0.2
 --- !u!114 &114425791634237340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -857,8 +857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jab_sound: {fileID: 8300000, guid: 802b28678a34d403abaad3811abfd655, type: 3}
   miss_sound: {fileID: 8300000, guid: c9418ac59e6434f2eabe1edfc68d1bbd, type: 3}
-  jab_volume: 1
-  miss_volume: 1
+  jab_volume: 0.2
+  miss_volume: 0.2
 --- !u!114 &114983409745183492
 MonoBehaviour:
   m_ObjectHideFlags: 1
