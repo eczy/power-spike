@@ -6,10 +6,9 @@ using InControl;
 public class Player : MonoBehaviour {
 	[HideInInspector] public InputDevice device;
 	public int player_number = 0;
-	public enum Team { Blue, Red };
 	public Team team;
 
-	void Start () {
+	private void Start () {
         PlayerAssignment assignments = FindObjectOfType<PlayerAssignment>();
 
         if (assignments)
@@ -21,11 +20,11 @@ public class Player : MonoBehaviour {
         UpdateDevice();
 	}
 
-	void Update () {
+	private void Update () {
         UpdateDevice();
 	}
 
-    void UpdateDevice()
+	private void UpdateDevice()
     {
 		if (InputManager.Devices.Count > player_number) {
 			device = InputManager.Devices [player_number];

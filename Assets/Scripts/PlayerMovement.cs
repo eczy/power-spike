@@ -47,16 +47,16 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-        if (!canMove)
+        float xInput = 0.0f;
+        bool willJump = false;
+        if (p.device != null && canMove)
         {
-            rb.velocity = Vector3.zero;
-            rb.position = rb.position;
+		    xInput = p.device.LeftStickX;
+            willJump = p.device.Action1.IsPressed;
         }
+
 		Vector3 velocity = rb.velocity;
-        if (p.device == null)
-            return;
 		// Horizontal
-		float xInput = p.device.LeftStickX;
 		float targetSpeed = xInput * maxSpeed;
 		float xDiff = targetSpeed - velocity.x;
 		float thisAcceleration = acceleration * accelerationMultiplierByDist.Evaluate(Mathf.Abs(xDiff / maxSpeed));
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour {
 		float jumpPower = 2 * jumpHeight / jumpTime;
 		float gravity = -2 * jumpHeight / (jumpTime * jumpTime);
 		gravity *= gravityModifierBySpeed.Evaluate(velocity.y / jumpPower);
-		if (!p.device.Action1.IsPressed && velocity.y > variableJumpCutoffSpeed) {
+		if (!willJump && velocity.y > variableJumpCutoffSpeed) {
 			gravity *= 5;
 		}
 		velocity.y += gravity * Time.deltaTime;

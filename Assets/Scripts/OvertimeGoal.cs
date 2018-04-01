@@ -6,7 +6,7 @@ public class OvertimeGoal : MonoBehaviour {
 
 	public int maxBatteries = 5;
 	public int startBatteries = 0;
-	public Player.Team teamGoal;
+	public Team teamGoal;
 	public int currentBatteries = 0;
     public GameObject batteryPrefab;
 

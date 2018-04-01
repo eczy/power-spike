@@ -37,3 +37,6 @@ sysinfo.txt
 .DS_Store
 thumbs.db
 .vs/
+
+.idea/
+*.iml

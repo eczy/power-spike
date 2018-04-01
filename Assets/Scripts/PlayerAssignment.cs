@@ -23,14 +23,14 @@ public class PlayerAssignment : MonoBehaviour {
         assignments = new int[4];
     }
 
-    public void StorePlayerAssignment(Player.Team team, int charge, int deviceNumber)
+    public void StorePlayerAssignment(Team team, int charge, int deviceNumber)
     {
         int playerCode = GetPlayerCode(team, charge);
 
         assignments[playerCode] = deviceNumber;
     }
 
-    public int GetPlayerAssignment(Player.Team team, int charge)
+    public int GetPlayerAssignment(Team team, int charge)
     {
         int playerCode = GetPlayerCode(team, charge);
         
@@ -41,24 +41,24 @@ public class PlayerAssignment : MonoBehaviour {
     //1 - Blue Negative
     //2 - Red Positive
     //3 - Red Negative
-    int GetPlayerCode(Player.Team team, int charge)
+    int GetPlayerCode(Team team, int charge)
     {
         int playerCode = 0;
 
-        if (team == Player.Team.Blue && charge > 0)
+        if (team == Team.Blue && charge > 0)
         {
             playerCode = 0;
 
         }
-        else if (team == Player.Team.Blue && charge < 0)
+        else if (team == Team.Blue && charge < 0)
         {
             playerCode = 1;
         }
-        else if (team == Player.Team.Red && charge > 0)
+        else if (team == Team.Red && charge > 0)
         {
             playerCode = 2;
         }
-        else if (team == Player.Team.Red && charge < 0)
+        else if (team == Team.Red && charge < 0)
         {
             playerCode = 3;
         }
