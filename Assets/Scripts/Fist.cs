@@ -34,7 +34,7 @@ public class Fist : MonoBehaviour {
 		coll.enabled = true;
         if (hit && jab_sound && !played_hit_sound)
         {
-            AudioSource.PlayClipAtPoint(jab_sound, transform.position, jab_volume);
+            AudioSource.PlayClipAtPoint(jab_sound, Camera.main.transform.position, jab_volume);
             played_hit_sound = true;
         }
         yield return null;
@@ -44,7 +44,7 @@ public class Fist : MonoBehaviour {
 		Vector3 target_pos = target.transform.localPosition;
 		while (t < speed) {
 			if (hit && jab_sound && !played_hit_sound) {
-				AudioSource.PlayClipAtPoint (jab_sound, transform.position, jab_volume);
+				AudioSource.PlayClipAtPoint (jab_sound, Camera.main.transform.position, jab_volume);
 				played_hit_sound = true;
 			}
 			t += Time.deltaTime;
@@ -53,11 +53,11 @@ public class Fist : MonoBehaviour {
 			yield return null;
 		}
 		if (hit && jab_sound && !played_hit_sound) {
-			AudioSource.PlayClipAtPoint (jab_sound, transform.position, jab_volume);
+			AudioSource.PlayClipAtPoint (jab_sound, Camera.main.transform.position, jab_volume);
 			played_hit_sound = true;
 		}
 		else if (!hit && miss_sound)
-			AudioSource.PlayClipAtPoint (miss_sound, transform.position, miss_volume);
+			AudioSource.PlayClipAtPoint (miss_sound, Camera.main.transform.position, miss_volume);
 		transform.localPosition = target_pos;
 		coll.enabled = false;
 		t = 0;
