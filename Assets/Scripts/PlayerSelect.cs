@@ -10,12 +10,12 @@ public class PlayerSelect : MonoBehaviour {
 	public float radius = 1f;
 	public RectTransform[] playerButtons;
 	public RectTransform[] playerSelectAreas;
-	public bool autoSelect = false;
+	public bool autoSelect;
+
 	[Header("Order: red pos, red neg, blue pos, blue neg")]
 	public Player[] players;
-	public Text pressStartText;
-    public Text pressStartTextShadow;
-	public float textSwitchDelay = 1f;
+	public GameObject pressStartText;
+    public GameObject pressStartTextShadow;
     public Color selectedColor;
 
     private PlayerAssignment assignments;
@@ -42,7 +42,7 @@ public class PlayerSelect : MonoBehaviour {
 			for (int i = 0; i < selections.Length; i++) {
 				selections [i] = i;
 			}
-			StartCoroutine(Finish());
+			Finish();
 		}
 	}
 
@@ -64,7 +64,7 @@ public class PlayerSelect : MonoBehaviour {
         bool selectionMade = selections.Count(t => t != -1) > 0;
         if (selectionMade && InputManager.ActiveDevice.MenuWasPressed)
         {
-			StartCoroutine(Finish());
+			Finish();
         }
     }
 
@@ -93,32 +93,15 @@ public class PlayerSelect : MonoBehaviour {
 
     }
 
-    private IEnumerator Finish(){
+    private void Finish(){
 		selectionDone = true;
 
-        foreach (RectTransform r in playerButtons)
-        {
-			r.gameObject.SetActive (false);
-        }
-
-        foreach (RectTransform r in playerSelectAreas)
-        {
-			r.gameObject.SetActive (false);
-        }
-
-        pressStartTextShadow.gameObject.SetActive(false);
-        pressStartText.transform.position = Camera.main.WorldToScreenPoint(Vector3.zero);
-		pressStartText.text = "READY";
-
-		yield return new WaitForSeconds (textSwitchDelay);
-
-		pressStartText.color = Color.red;
-		pressStartText.text = "GO";
+	    HidePlayerSelect();
 
 		for (int i = 0; i < players.Length; i++) {
 		    if (selections[i] != -1)
 		    {
-			    players [selections[i]].player_number = i;
+			    players[selections[i]].player_number = i;
 		    }
 		}
 
@@ -132,9 +115,6 @@ public class PlayerSelect : MonoBehaviour {
             player.gameObject.SetActive(true);
         }
 
-		yield return new WaitForSeconds (textSwitchDelay);
-
-		pressStartText.gameObject.SetActive (false);
         FindObjectOfType<TutorialManager>().enabled = true;
 	}
 
@@ -205,4 +185,20 @@ public class PlayerSelect : MonoBehaviour {
 
         return quadrant;
     }
+
+	private void HidePlayerSelect()
+	{
+        foreach (RectTransform r in playerButtons)
+        {
+			r.gameObject.SetActive (false);
+        }
+
+        foreach (RectTransform r in playerSelectAreas)
+        {
+			r.gameObject.SetActive (false);
+        }
+		
+		pressStartText.SetActive(false);
+		pressStartTextShadow.SetActive(false);
+	}
 }
