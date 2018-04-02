@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour {
     private void Start()
     {
         timer = FindObjectOfType<Timer>();
+        overtime = FindObjectOfType<Overtime>();
     }
 
     private void Update () {

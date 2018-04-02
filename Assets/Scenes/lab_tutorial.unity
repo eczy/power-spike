@@ -10362,11 +10362,7 @@ Prefab:
     - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
         type: 2}
       propertyPath: m_Color.a
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> koestern
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3848dd235e301143a6d3ef2250d1288, type: 2}
