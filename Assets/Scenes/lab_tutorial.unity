@@ -7400,7 +7400,7 @@ MonoBehaviour:
   - {fileID: 312317299}
   pressStartText: {fileID: 1254522805}
   pressStartTextShadow: {fileID: 1017389544}
-  selectedColor: {r: 0.71300006, g: 0.71300006, b: 0.71300006, a: 1}
+  selectedColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
 --- !u!4 &1312920049
 Transform:
   m_ObjectHideFlags: 0

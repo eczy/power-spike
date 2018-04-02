@@ -20,7 +20,7 @@ public class PlayerAssignment : MonoBehaviour {
             singleton = this;
             DontDestroyOnLoad(gameObject);
         }
-        assignments = new int[4];
+        assignments = new int[4] { -1, -1, -1, -1 };
     }
 
     public void StorePlayerAssignment(Team team, int charge, int deviceNumber)
