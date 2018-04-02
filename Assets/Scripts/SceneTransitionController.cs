@@ -35,6 +35,10 @@ public class SceneTransitionController : MonoBehaviour {
         {
             RefreshEffectComponentOnCamera();
         }
+        if (singleton.currentState == SceneTransitionState.NOT_TRANSITIONING)
+        {
+            effect.SetProgress(0);
+        }
 	}
 
     void RefreshEffectComponentOnCamera()
