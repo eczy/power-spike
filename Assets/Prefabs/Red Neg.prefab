@@ -611,13 +611,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fd32f0e12554151afabc1fe8030b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  falloff_y_value: -10
-  respawn_time: 2
-  battery_respawn:
+  respawnTime: 2
+  batteryRespawn:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player_spawn: {fileID: 0}
+  playerSpawn: {fileID: 0}
 --- !u!114 &114919319220671190
 MonoBehaviour:
   m_ObjectHideFlags: 1
