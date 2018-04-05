@@ -611,13 +611,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fd32f0e12554151afabc1fe8030b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  falloff_y_value: -10
-  respawn_time: 2
-  battery_respawn:
+  respawnTime: 2
+  batteryRespawn:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player_spawn: {fileID: 0}
+  playerSpawn: {fileID: 0}
 --- !u!114 &114805827616833044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -849,9 +848,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: -10
-      minScalar: 5
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -904,7 +903,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.39215687, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.522, b: 0, a: 0.809}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

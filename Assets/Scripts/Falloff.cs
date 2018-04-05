@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Falloff : MonoBehaviour {
+	public float respawnTime;
+	public Transform[] batteryRespawn;
+	public Transform playerSpawn;
 
-	public float falloff_y_value = 0f;
-	public float respawn_time = 0f;
-	public Transform[] battery_respawn;
-	public Transform player_spawn;
-
-	Vector3 original_position;
+	private Vector3 originalPosition;
 	
-	// Update is called once per frame
-	void Update () {
-		if (transform.position.y <= falloff_y_value)
-        {
-			StartCoroutine (Respawn ());
+	private void Update () {
+		CheckBounds();
+	}
 
-            PlayerToStats stats = GetComponent<PlayerToStats>();
-            stats.ReportDeath();
-        }
+	private void CheckBounds()
+	{
+		if (!BoundryManager.OutOfBounds(transform.position)) return;
+		
+		StartCoroutine (Respawn());
+
+		PlayerToStats stats = GetComponent<PlayerToStats>();
+		stats.ReportDeath();
 	}
 
 	IEnumerator Respawn(){
@@ -46,11 +47,11 @@ public class Falloff : MonoBehaviour {
 		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
 			rend.enabled = false;
 
-		transform.position = player_spawn.position;
-		transform.rotation = player_spawn.rotation;
+		transform.position = playerSpawn.position;
+		transform.rotation = playerSpawn.rotation;
 		GetComponent<Rigidbody> ().velocity = Vector3.zero;
 		GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
-		yield return new WaitForSeconds (respawn_time);
+		yield return new WaitForSeconds (respawnTime);
 
 		r.enabled = true;
 		m.enabled = true;
@@ -60,25 +61,27 @@ public class Falloff : MonoBehaviour {
         rb.isKinematic = false;
 		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
 			rend.enabled = true;
-		transform.forward = player_spawn.forward;
+		transform.forward = playerSpawn.forward;
         if (health != null)
 		    health.health = health.max_health;
 	}
 
-    Vector3 GetClosestBatterySpawn(Vector3 position)
+	private Vector3 GetClosestBatterySpawn(Vector3 position)
     {
         Vector3 nearest = Vector3.zero;
-        float min_dist = Mathf.Infinity;
-        for (int i = 0; i < battery_respawn.Length; i++)
+        float minDist = Mathf.Infinity;
+	    
+        foreach (Transform t in batteryRespawn)
         {
-            float dist = Vector3.Distance(position, battery_respawn[i].position);
+	        float dist = Vector3.Distance(position, t.position);
 
-            if (dist < min_dist)
-            {
-                min_dist = dist;
-                nearest = battery_respawn[i].position;
-            }
+	        if (dist < minDist)
+	        {
+		        minDist = dist;
+		        nearest = t.position;
+	        }
         }
+	    
         return nearest;
     }
 }
