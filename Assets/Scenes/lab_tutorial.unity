@@ -4461,7 +4461,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 44111c6658a6a42f1a7c58ed85c67153, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.379
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4556,7 +4556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59c398419a965149a25047d4ef2658d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: {fileID: 0}
+  black: {fileID: 1172261669}
   progress: 0
 --- !u!4 &789377144 stripped
 Transform:
@@ -6447,6 +6447,12 @@ Transform:
   m_Father: {fileID: 2041948005}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172261669 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
+    type: 2}
+  m_PrefabInternal: {fileID: 1787743981}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1186484570
 Prefab:
   m_ObjectHideFlags: 0
@@ -7394,7 +7400,7 @@ MonoBehaviour:
   - {fileID: 312317299}
   pressStartText: {fileID: 1254522805}
   pressStartTextShadow: {fileID: 1017389544}
-  selectedColor: {r: 0.71300006, g: 0.71300006, b: 0.71300006, a: 1}
+  selectedColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
 --- !u!4 &1312920049
 Transform:
   m_ObjectHideFlags: 0
@@ -10352,6 +10358,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3848dd235e301143a6d3ef2250d1288, type: 2}

@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 
 	private void UpdateDevice()
     {
-		if (InputManager.Devices.Count > player_number) {
+		if (player_number >= 0 && InputManager.Devices.Count > player_number) {
 			device = InputManager.Devices [player_number];
 		} else {
 			device = null;

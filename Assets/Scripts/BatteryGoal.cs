@@ -21,13 +21,12 @@ public class BatteryGoal : MonoBehaviour {
 
 	void Update() {
 		anim.SetFloat ("numBatteries", currentBatteries);
-
 	}
 
 	void OnTriggerStay(Collider other) {
 		BatteryCollector collector = other.GetComponent<BatteryCollector> ();
 
-		if (collector && collector.CanDrop()) {
+		if (collector && collector.CanDrop() && CollectorOnThisTeam(collector)) {
 			Battery battery = collector.GetBattery ();
 			collector.RemoveBattery ();
 			AddBattery (battery);

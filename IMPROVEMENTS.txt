@@ -24,3 +24,9 @@ IMPROVEMENTS FOR ALPHA:
 - Added game timer to limit game time and overtime mechanic to resolve ties
 - Added charges above players heads
 - Added pause screen.
+
+IMPROVEMENTS FOR BETA:
+- Added scene transitions
+- Improved UI professional appearance
+- Limited overtime to only happen on ties
+- Added lighting effects to lighning and score

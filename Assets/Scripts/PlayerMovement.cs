@@ -39,9 +39,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Update() {
-        if (p.device == null)
-            return;
-		if (p.device.Action1.WasPressed) {
+		if (p.device != null && p.device.Action1.WasPressed) {
 			jumpBuffer = maxJumpBuffer;
 		}
 	}

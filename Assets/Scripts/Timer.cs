@@ -6,11 +6,9 @@ public class Timer : MonoBehaviour {
     public Text countDown;
     public float timeLimit = 180;
     
-    private Overtime overtime;
     
     private void Start () {
         gameObject.SetActive(true);
-        overtime = FindObjectOfType<Overtime>();
     }
 
     private void Update()
@@ -20,11 +18,6 @@ public class Timer : MonoBehaviour {
             timeLimit -= Time.deltaTime;
             countDown.text = SecondsToMinuteSeconds((int) timeLimit);
         }
-        else if (overtime)
-        {
-            overtime.StartOvertime();
-        }
-
     }
 
     /* https://answers.unity.com/questions/45676/making-a-timer-0000-minutes-and-seconds.html */
@@ -33,5 +26,10 @@ public class Timer : MonoBehaviour {
         string minutes = Mathf.Floor(timerSeconds / 60).ToString("0");
         string seconds = Mathf.Floor(timerSeconds % 60).ToString("00");
         return minutes + ":" + seconds;
+    }
+
+    public bool IsTimeOut()
+    {
+        return timeLimit <= 0;
     }
 }
