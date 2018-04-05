@@ -8,7 +8,23 @@ public class Falloff : MonoBehaviour {
 	public Transform playerSpawn;
 
 	private Vector3 originalPosition;
-	
+    private Renderer r;
+    private PlayerMovement m;
+    private PlayerAttack a;
+    private Hitbox h;
+    private Rigidbody rb;
+    private Collider coll;
+
+	private void Start()
+	{
+		coll = GetComponent<Collider>();
+		rb = GetComponent<Rigidbody>();
+		h = GetComponent<Hitbox> ();
+		a = GetComponent<PlayerAttack> ();
+		r = GetComponent<Renderer> ();
+		m = GetComponent<PlayerMovement> ();
+	}
+
 	private void Update () {
 		CheckBounds();
 	}
@@ -16,54 +32,60 @@ public class Falloff : MonoBehaviour {
 	private void CheckBounds()
 	{
 		if (!BoundryManager.OutOfBounds(transform.position)) return;
-		
-		StartCoroutine (Respawn());
+
+		if (BoundryManager.GetOutOfBoundsDirection(transform.position) == Vector3.up)
+		{
+			// Hit camera
+		}
+		StartCoroutine(Respawn());
 
 		PlayerToStats stats = GetComponent<PlayerToStats>();
 		stats.ReportDeath();
 	}
 
-	IEnumerator Respawn(){
+	private IEnumerator Respawn(){
+		RespawnBattery();
+
+		SetComponentsEnabled(false);
+
+		ResetPosition();
+		yield return new WaitForSeconds(respawnTime);
+
+		SetComponentsEnabled(true);
+		
+		transform.forward = playerSpawn.forward;
+	}
+
+	private void RespawnBattery()
+	{
 		Battery bat = GetComponent<BatteryCollector> ().GetBattery ();
-		if (bat != null) {
-			GetComponent<BatteryCollector> ().RemoveBattery ();
-			bat.transform.position = GetClosestBatterySpawn(bat.transform.position);
+		if (bat == null) return;
+		
+		GetComponent<BatteryCollector> ().RemoveBattery ();
+		bat.transform.position = GetClosestBatterySpawn(bat.transform.position);
+	}
+
+	private void ResetPosition()
+	{
+		transform.position = playerSpawn.position;
+		rb.velocity = Vector3.zero;
+		rb.angularVelocity = Vector3.zero;
+	}
+
+	private void SetComponentsEnabled(bool isEnabled)
+	{
+		r.enabled = isEnabled;
+		m.enabled = isEnabled;
+		a.enabled = isEnabled;
+		h.enabled = isEnabled;
+        coll.enabled = isEnabled;
+
+		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
+		{
+			rend.enabled = isEnabled;
 		}
 
-		Renderer r = GetComponent<Renderer> ();
-		PlayerMovement m = GetComponent<PlayerMovement> ();
-		PlayerAttack a = GetComponent<PlayerAttack> ();
-		Hitbox h = GetComponent<Hitbox> ();
-		Health health = GetComponent<Health> ();
-        Rigidbody rb = GetComponent<Rigidbody>();
-        Collider coll = GetComponent<Collider>();
-
-		r.enabled = false;
-		m.enabled = false;
-		a.enabled = false;
-		h.enabled = false;
-        coll.enabled = false;
-        rb.isKinematic = true;
-		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
-			rend.enabled = false;
-
-		transform.position = playerSpawn.position;
-		transform.rotation = playerSpawn.rotation;
-		GetComponent<Rigidbody> ().velocity = Vector3.zero;
-		GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
-		yield return new WaitForSeconds (respawnTime);
-
-		r.enabled = true;
-		m.enabled = true;
-		a.enabled = true;
-		h.enabled = true;
-        coll.enabled = true;
-        rb.isKinematic = false;
-		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
-			rend.enabled = true;
-		transform.forward = playerSpawn.forward;
-        if (health != null)
-		    health.health = health.max_health;
+		rb.isKinematic = !isEnabled;
 	}
 
 	private Vector3 GetClosestBatterySpawn(Vector3 position)
