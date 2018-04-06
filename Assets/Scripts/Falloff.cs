@@ -63,6 +63,7 @@ public class Falloff : MonoBehaviour {
 		
 		GetComponent<BatteryCollector> ().RemoveBattery ();
 		bat.transform.position = GetClosestBatterySpawn(bat.transform.position);
+        bat.GetComponent<Rigidbody>().velocity = Vector3.zero;
 	}
 
 	private void ResetPosition()
