@@ -69,10 +69,18 @@ public class PlayerAttack : MonoBehaviour {
 				continue;
 			
 			Rigidbody rb = hit.GetComponent<Rigidbody>();
-			Charge hit_charge = hit.GetComponent<Charge> ();
+
+            Team hit_team = hit.GetComponent<Player>().team;
+            Team team = p.team;
+
+            int multiplier = 0;
+            if (hit_team == team)
+                multiplier = -1;
+            else
+                multiplier = 1;
 
 			if (rb != null) {
-				rb.AddExplosionForce (charge_force * Mathf.Sign(charge.charge * hit_charge.charge), transform.position, 0, 0.0f, ForceMode.Impulse);
+				rb.AddExplosionForce (charge_force * multiplier, transform.position, 0, 0.0f, ForceMode.Impulse);
 			}
 		}
 
