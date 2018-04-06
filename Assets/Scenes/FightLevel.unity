@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2fad24728e6104c8d55c263c08ef24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorObject: {fileID: 0}
+  anchorObject: {fileID: 1682294186}
   anchorOffset: {x: 0, y: 2, z: 0}
   easingFactor: 0.5
 --- !u!114 &165802576
@@ -3749,7 +3749,7 @@ MonoBehaviour:
   camera_height_factor: 0
   camera_height_offset: 5
   players:
-  - {fileID: 0}
+  - {fileID: 1682294200}
   - {fileID: 1960156670}
   - {fileID: 1112587835}
   - {fileID: 73860971}
@@ -9217,6 +9217,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1676051620}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1682294186 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1836290090692342, guid: c91802a91986f4458823fc935abda372,
+    type: 2}
+  m_PrefabInternal: {fileID: 1270540041}
+--- !u!4 &1682294200 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4114276565226322, guid: c91802a91986f4458823fc935abda372,
+    type: 2}
+  m_PrefabInternal: {fileID: 1270540041}
 --- !u!1 &1717366192
 GameObject:
   m_ObjectHideFlags: 0
@@ -10640,7 +10650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15396827e3920b64f93f5ab169e4bca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 35
+  timeLimit: 180
   countDown: {fileID: 1774849441}
   warnings: {fileID: 394414084}
   warningColor: {r: 1, g: 0.51666665, b: 0, a: 1}
