@@ -12,8 +12,6 @@ public class ScoreManager : MonoBehaviour {
 	public Transform lightning_middle;
 	public AudioClip score_change_sound;
 	public float score_change_volume = 1f;
-	public Text red_batteries_text;
-	public Text blue_batteries_text;
 
 	int prev_blue = 0;
 	int prev_red = 0;

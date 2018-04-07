@@ -56,6 +56,11 @@ public class PlayerAttack : MonoBehaviour {
             punch_target.transform.position = transform.position + new Vector3(p.device.LeftStickX, p.device.LeftStickY, 0).normalized * punch_distance;
 	}
 
+	public bool ChargeAttackReady()
+	{
+		return !charge_attacking;
+	}
+
 	IEnumerator ChargeAttack(){
 		charge_attacking = true;
 		em.enabled = true;
