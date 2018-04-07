@@ -19,6 +19,6 @@ public class ScaleAnimWithVelocity : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         foreach (Animator a in animators)
-            a.speed = rb.velocity.magnitude * multiplier;
+            a.speed = Mathf.Abs(rb.velocity.x) * multiplier;
 	}
 }

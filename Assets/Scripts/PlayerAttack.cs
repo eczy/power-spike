@@ -94,12 +94,12 @@ public class PlayerAttack : MonoBehaviour {
 
 	IEnumerator Punch() {
 		punching = true;
-		if (fist_toggle)
-			StartCoroutine (left.Jab (punch_target, punch_speed, punch_recovery_time, punch_damage));
-		else
-			StartCoroutine (right.Jab (punch_target, punch_speed, punch_recovery_time, punch_damage));
+        if (fist_toggle)
+            StartCoroutine(left.Jab(punch_target, punch_speed, punch_recovery_time, punch_damage));
+        else
+            StartCoroutine(right.Jab(punch_target, punch_speed, punch_recovery_time, punch_damage));
 		fist_toggle = !fist_toggle;
-		yield return new WaitForSeconds (punch_recovery_time);
+        yield return new WaitForSeconds (punch_recovery_time);
 		punching = false;
 	}
 }

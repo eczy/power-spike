@@ -6,6 +6,9 @@ public class Falloff : MonoBehaviour {
 	public float respawnTime;
 	public Transform[] batteryRespawn;
 	public Transform playerSpawn;
+    public Transform explosionPrefab;
+    public AudioClip explosionSound;
+    public float explosionVolume = 1f;
 
 	private Vector3 originalPosition;
     private Renderer r;
@@ -48,6 +51,16 @@ public class Falloff : MonoBehaviour {
 
 		SetComponentsEnabled(false);
 
+        if (explosionPrefab)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.LookRotation(Vector3.down, Vector3.right));
+
+            if (explosionSound)
+            {
+                AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, explosionVolume);
+            }
+        }
+
 		ResetPosition();
 		yield return new WaitForSeconds(respawnTime);
 
@@ -63,7 +76,6 @@ public class Falloff : MonoBehaviour {
 		
 		GetComponent<BatteryCollector> ().RemoveBattery ();
 		bat.transform.position = GetClosestBatterySpawn(bat.transform.position);
-        bat.GetComponent<Rigidbody>().velocity = Vector3.zero;
 	}
 
 	private void ResetPosition()

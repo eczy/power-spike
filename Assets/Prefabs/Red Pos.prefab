@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 114355056694035688}
   - component: {fileID: 114791786886199078}
   - component: {fileID: 114805827616833044}
+  - component: {fileID: 114418396202394948}
   m_Layer: 8
   m_Name: Red Pos
   m_TagString: Untagged
@@ -234,7 +235,7 @@ Transform:
   m_GameObject: {fileID: 1105543783955638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4571152408532730}
   m_RootOrder: 1
@@ -263,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 1920644994223476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4571152408532730}
   m_RootOrder: 0
@@ -392,7 +393,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6fa488981184549b59e97bc43b2275cc, type: 2}
+  - {fileID: 2100000, guid: 10ec639f9bb3ba34698c8547e151e0d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -462,7 +463,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: bad35f1e93b6b4262a3d326163b80a1c, type: 2}
+  - {fileID: 2100000, guid: c24fe678c78b44242ae771e03b5184b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -770,6 +771,21 @@ MonoBehaviour:
   miss_sound: {fileID: 8300000, guid: c9418ac59e6434f2eabe1edfc68d1bbd, type: 3}
   jab_volume: 0.2
   miss_volume: 0.2
+--- !u!114 &114418396202394948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836290090692342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd47f89e2876a471a8192ece03814b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animators:
+  - {fileID: 95898215466123086}
+  - {fileID: 95304020067879526}
+  multiplier: 0.15
 --- !u!114 &114425791634237340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -836,6 +852,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   playerSpawn: {fileID: 0}
+  explosionPrefab: {fileID: 4747595182357890, guid: b393c6d0a9a3e9f4b96f7799213d7a0b,
+    type: 2}
+  explosionSound: {fileID: 8300000, guid: 6d3eeb5fc4bad664dbd9476ac9c3d63d, type: 3}
+  explosionVolume: 1
 --- !u!114 &114805827616833044
 MonoBehaviour:
   m_ObjectHideFlags: 1
