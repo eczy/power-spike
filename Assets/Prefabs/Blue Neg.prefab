@@ -850,7 +850,7 @@ MonoBehaviour:
   animators:
   - {fileID: 95898215466123086}
   - {fileID: 95304020067879526}
-  multiplier: 1
+  multiplier: 0.15
 --- !u!114 &114608623834035550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -868,6 +868,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   playerSpawn: {fileID: 0}
+  explosionPrefab: {fileID: 4747595182357890, guid: b393c6d0a9a3e9f4b96f7799213d7a0b,
+    type: 2}
+  explosionSound: {fileID: 8300000, guid: 6d3eeb5fc4bad664dbd9476ac9c3d63d, type: 3}
+  explosionVolume: 1
 --- !u!114 &114673558978321382
 MonoBehaviour:
   m_ObjectHideFlags: 1
