@@ -8,21 +8,21 @@ public class Falloff : MonoBehaviour {
 	public Transform playerSpawn;
 
 	private Vector3 originalPosition;
-    private Renderer r;
     private PlayerMovement m;
     private PlayerAttack a;
     private Hitbox h;
     private Rigidbody rb;
     private Collider coll;
+	private bool isRespawning;
 
 	private void Start()
 	{
+		isRespawning = false;
 		coll = GetComponent<Collider>();
 		rb = GetComponent<Rigidbody>();
-		h = GetComponent<Hitbox> ();
-		a = GetComponent<PlayerAttack> ();
-		r = GetComponent<Renderer> ();
-		m = GetComponent<PlayerMovement> ();
+		h = GetComponent<Hitbox>();
+		a = GetComponent<PlayerAttack>();
+		m = GetComponent<PlayerMovement>();
 	}
 
 	private void Update () {
@@ -47,9 +47,11 @@ public class Falloff : MonoBehaviour {
 		RespawnBattery();
 
 		SetComponentsEnabled(false);
-
 		ResetPosition();
+
+		isRespawning = true;
 		yield return new WaitForSeconds(respawnTime);
+		isRespawning = false;
 
 		SetComponentsEnabled(true);
 		
@@ -75,13 +77,12 @@ public class Falloff : MonoBehaviour {
 
 	private void SetComponentsEnabled(bool isEnabled)
 	{
-		r.enabled = isEnabled;
 		m.enabled = isEnabled;
 		a.enabled = isEnabled;
 		h.enabled = isEnabled;
         coll.enabled = isEnabled;
 
-		foreach (Renderer rend in GetComponentsInChildren<Renderer>())
+		foreach (MeshRenderer rend in GetComponentsInChildren<MeshRenderer>())
 		{
 			rend.enabled = isEnabled;
 		}
@@ -107,4 +108,9 @@ public class Falloff : MonoBehaviour {
 	    
         return nearest;
     }
+
+	public bool IsRespawning()
+	{
+		return isRespawning;
+	}
 }
