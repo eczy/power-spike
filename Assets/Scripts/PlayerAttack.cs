@@ -85,7 +85,7 @@ public class PlayerAttack : MonoBehaviour {
                 multiplier = 1;
 
 			if (rb != null) {
-				rb.AddExplosionForce (charge_force * multiplier, transform.position, charge_radius, 0.0f, ForceMode.Impulse);
+				rb.AddExplosionForce (charge_force * multiplier, transform.position, 0, 0.0f, ForceMode.Impulse);
 			}
 		}
 

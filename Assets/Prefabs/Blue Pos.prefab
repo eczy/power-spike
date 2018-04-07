@@ -748,7 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge_system: {fileID: 198598989565806356}
   charge_duration: 0.2
-  charge_force: 100
+  charge_force: 60
   cooldown: 1
   electric_sound: {fileID: 8300000, guid: 3599af490f086422c9c42787f5e90063, type: 3}
   sound_volume: 0.6
