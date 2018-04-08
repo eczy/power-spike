@@ -6160,7 +6160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1295662202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6281,10 +6281,6 @@ Prefab:
     - target: {fileID: 4505507948676820, guid: 4d1cdecc218877544b1ae4d31b4bd7cd, type: 2}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470062720426706, guid: 4d1cdecc218877544b1ae4d31b4bd7cd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d1cdecc218877544b1ae4d31b4bd7cd, type: 2}
@@ -7294,16 +7290,6 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 2024812947}
-    - target: {fileID: 23079489709229478, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23079489709229478, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: m_CastShadows
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
