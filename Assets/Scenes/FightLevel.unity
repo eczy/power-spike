@@ -4242,12 +4242,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1743138312972988, guid: 3433e7b0af85e4b21a5a502e76d68e2e,
     type: 2}
   m_PrefabInternal: {fileID: 550583298}
---- !u!114 &788904308 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114424389454258378, guid: f3848dd235e301143a6d3ef2250d1288,
-    type: 2}
-  m_PrefabInternal: {fileID: 149616241}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &789578332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6521,9 +6515,9 @@ Canvas:
   m_GameObject: {fileID: 1295662201}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1717366195}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -9439,7 +9433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59c398419a965149a25047d4ef2658d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: {fileID: 788904308}
   progress: 1
 --- !u!114 &1717366200
 MonoBehaviour:

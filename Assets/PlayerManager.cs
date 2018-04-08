@@ -6,9 +6,8 @@ public class PlayerManager : MonoBehaviour {
 
     Player[] players;
 
-	void Start () {
+	void Awake () {
         players = FindObjectsOfType<Player>();
-		
 	}
 
     public void DisablePlayers()

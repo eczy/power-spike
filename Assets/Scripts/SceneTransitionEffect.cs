@@ -7,43 +7,36 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class SceneTransitionEffect : MonoBehaviour {
 
-    public Image black;
-    Color color = Color.black;
+    Material material;
+    GameObject canvas;
 
     [Range(0, 1)]
     public float progress = 0;
 
-    void Start() {
-        if (!black)
-        {
-            GetBlackImage();
-        }
+    void Awake()
+    {
+        material = GetMaterial();
+        canvas = GameObject.Find("Canvas");
     }
 
-    private void Update()
+    Material GetMaterial()
     {
-        color.a = progress;
-        black.color = color;
-    }
-
-    void GetBlackImage()
-    {
-        string imageName = "black";
-        GameObject blackObject = GameObject.Find(imageName);
-        
-        if (blackObject)
-        {
-            black = blackObject.GetComponent<Image>();
-        }
-
-        if (!(blackObject && black))
-        {
-            Debug.LogWarning("Black Image 'black' not present in scene");
-        }
+        string material_name = "ScreenFadeEffect";
+        return Resources.Load<Material>(material_name);
     }
 
     public void SetProgress(float p)
     {
         progress = p;
+    }
+
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    {
+        if (!material)
+        {
+            Debug.Log("Material is null");
+        }
+        material.SetFloat("_Progress", Mathf.Clamp01(1.0f - progress));
+        Graphics.Blit(source, destination, material);
     }
 }
