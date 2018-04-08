@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class SceneTransitionEffect : MonoBehaviour {
 
     Material material;
-    GameObject canvas;
 
     [Range(0, 1)]
     public float progress = 0;
@@ -16,7 +15,6 @@ public class SceneTransitionEffect : MonoBehaviour {
     void Awake()
     {
         material = GetMaterial();
-        canvas = GameObject.Find("Canvas");
     }
 
     Material GetMaterial()
