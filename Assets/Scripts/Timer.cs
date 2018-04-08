@@ -5,6 +5,7 @@ public class Timer : MonoBehaviour {
 
     [Header("Time Parameters")]
     public int timeLimit = 180;
+    public int precount = 3;
 
     [Header("Textboxes")]
     public Text countDown;
@@ -12,9 +13,14 @@ public class Timer : MonoBehaviour {
 
     [Header("Colors")]
     public Color warningColor;
+
+
+    PlayerManager playerManager;
     
     private void Start () {
-        InvokeRepeating("Countdown", 1.0f, 1.0f);
+        playerManager = GetComponent<PlayerManager>();
+        playerManager.DisablePlayers();
+        InvokeRepeating("Precount", 1.0f, 1.0f);
     }
 
     private void Update()
@@ -39,7 +45,23 @@ public class Timer : MonoBehaviour {
         {
             CancelInvoke("Countdown");
         }
+    }
 
+    void Precount()
+    {
+        precount -= 1;
+
+        if (warnings)
+        {
+            warnings.DisplayPrecount(precount);
+        }
+
+        if (precount <= 0)
+        {
+            CancelInvoke("Precount");
+            StartGame();
+            InvokeRepeating("Countdown", 1.0f, 1.0f);
+        }
     }
 
     /* https://answers.unity.com/questions/45676/making-a-timer-0000-minutes-and-seconds.html */
@@ -53,5 +75,10 @@ public class Timer : MonoBehaviour {
     public bool IsTimeOut()
     {
         return timeLimit <= 0;
+    }
+
+    void StartGame()
+    {
+        playerManager.EnablePlayers();
     }
 }
