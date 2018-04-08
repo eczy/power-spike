@@ -18,7 +18,7 @@ public class Lightning : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         lr.positionCount = num_segments;
         lr.SetPosition(0, start.localPosition);
         for (int i = 1; i < num_segments-1; i++)
