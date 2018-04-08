@@ -811,7 +811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linesEnabled: 1
-  lineOffset: 0.1
+  lineOffset: 0.25
+  numSegments: 5
+  segmentRange: 0.5
 --- !u!114 &114446829622212236
 MonoBehaviour:
   m_ObjectHideFlags: 1
