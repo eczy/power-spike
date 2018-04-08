@@ -7,6 +7,10 @@ public class ChargeAttackRange : MonoBehaviour
 	public bool linesEnabled = true;
 	public float lineOffset;
 	
+	[Header("Lightning Settings")]
+	public int numSegments;
+	public float segmentRange;
+	
 	private PlayerAttack attack;
 	private Falloff falloff;
 	private float radius;
@@ -32,9 +36,35 @@ public class ChargeAttackRange : MonoBehaviour
 		InitLineArray();
 	}
 	
-	private void Update ()
+	private void FixedUpdate ()
 	{
 		DrawLines();
+		MakeLightning();
+	}
+
+	private void MakeLightning()
+	{
+		foreach (LineRenderer line in lines)
+		{
+			Lightningify(line);
+		}
+	}
+
+	private void Lightningify(LineRenderer line)
+	{
+		Vector3 start = line.GetPosition(0);
+		Vector3 end = line.GetPosition(1);
+		line.positionCount = numSegments;
+		
+        line.SetPosition(0, start);
+        for (int i = 1; i < numSegments - 1; i++)
+        {
+            Vector3 pos = Vector3.Lerp(start, end, (float) i / numSegments);
+            pos.z += Random.Range(-segmentRange, segmentRange);
+            pos.y += Random.Range(-segmentRange, segmentRange);
+            line.SetPosition(i, pos);
+        }
+        line.SetPosition(numSegments - 1, end);
 	}
 
 	private void DrawLines()
@@ -47,6 +77,8 @@ public class ChargeAttackRange : MonoBehaviour
 
 	private void DrawLine(Component other, LineRenderer line)
 	{
+		line.positionCount = 2;
+		
 		Vector3 position = transform.position;
 		Vector3 destPosition = other.transform.position;
 
