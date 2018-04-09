@@ -4336,11 +4336,6 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 2024812947}
-    - target: {fileID: 114281004862664650, guid: a804a1ff33d69489097a1f87ec42e62e,
-        type: 2}
-      propertyPath: charge_force
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
   m_IsPrefabParent: 0
@@ -7323,11 +7318,6 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 2024812947}
-    - target: {fileID: 114281004862664650, guid: c91802a91986f4458823fc935abda372,
-        type: 2}
-      propertyPath: charge_force
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -7564,11 +7554,6 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 1810362763}
-    - target: {fileID: 114281004862664650, guid: 9aee6835825594dd98ac5776123bef98,
-        type: 2}
-      propertyPath: charge_force
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
   m_IsPrefabParent: 0
@@ -8480,11 +8465,6 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 1810362763}
-    - target: {fileID: 114281004862664650, guid: 6dac0a426aa224a379b11f943508ee29,
-        type: 2}
-      propertyPath: charge_force
-      value: 120
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
