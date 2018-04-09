@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour {
     [Header("Time Parameters")]
     public int timeLimit = 180;
     public int precount = 3;
+    public bool precount_only = false;
 
     [Header("Textboxes")]
     public Text countDown;
@@ -60,7 +61,8 @@ public class Timer : MonoBehaviour {
         {
             CancelInvoke("Precount");
             StartGame();
-            InvokeRepeating("Countdown", 1.0f, 1.0f);
+            if (!precount_only)
+                InvokeRepeating("Countdown", 1.0f, 1.0f);
         }
     }
 
