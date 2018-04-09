@@ -35,8 +35,8 @@ public class TimeWarning : MonoBehaviour {
         anim = GetComponent<Animator>();
         cameraShake = Camera.main.GetComponent<NickShake>();
 
-        currentText = "Collect!";
-        currentFont = wordFontSize;
+        currentText = "3";
+        currentFont = numberFontSize;
 	}
 
     private void LateUpdate()
@@ -50,26 +50,39 @@ public class TimeWarning : MonoBehaviour {
         if (currentTime == firstWarning)
         {
             currentText = firstWarning.ToString() + " seconds remaining";
-            currentFont = wordFontSize;
-            AudioSource.PlayClipAtPoint(warningSound, Camera.main.transform.position);
-            cameraShake.AddTrauma(trauma);
-            anim.SetTrigger("TriggerWarning");
+            ShowWarning(currentText.ToString(), wordFontSize, warningSound);
         }
         else if (currentTime == secondWarning)
         {
             currentText = secondWarning.ToString() + " seconds remaining";
-            currentFont = wordFontSize;
-            AudioSource.PlayClipAtPoint(warningSound, Camera.main.transform.position);
-            cameraShake.AddTrauma(trauma);
-            anim.SetTrigger("TriggerWarning");
+            ShowWarning(currentText.ToString(), wordFontSize, warningSound);
         }
         else if (currentTime <= countdownTime)
         {
-            currentText = currentTime.ToString();
-            currentFont = numberFontSize;
-            AudioSource.PlayClipAtPoint(countdownSound, Camera.main.transform.position + 5*Vector3.forward);
-            cameraShake.AddTrauma(trauma);
-            anim.SetTrigger("TriggerWarning");
+            ShowWarning(currentTime.ToString(), numberFontSize, countdownSound);
         }
+    }
+
+    public void DisplayPrecount(int precount)
+    {
+        string text = precount.ToString();
+        AudioClip clip = countdownSound;
+
+        if (precount == 0)
+        {
+            text = "GO!";
+            clip = warningSound;
+        }
+        
+        ShowWarning(text, numberFontSize, clip);
+    }
+
+    void ShowWarning(string text, int fontSize, AudioClip clip)
+    {
+        currentText = text;
+        currentFont = fontSize;
+        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position + 5*Vector3.forward);
+        cameraShake.AddTrauma(trauma);
+        anim.SetTrigger("TriggerWarning");
     }
 }
