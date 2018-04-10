@@ -15,7 +15,6 @@ public class PlayerSelect : MonoBehaviour {
 	[Header("Order: red pos, red neg, blue pos, blue neg")]
 	public Player[] players;
 	public GameObject pressStartText;
-    public GameObject pressStartTextShadow;
     public Color selectedColor;
 
     private PlayerAssignment assignments;
@@ -199,6 +198,5 @@ public class PlayerSelect : MonoBehaviour {
         }
 		
 		pressStartText.SetActive(false);
-		pressStartTextShadow.SetActive(false);
 	}
 }
