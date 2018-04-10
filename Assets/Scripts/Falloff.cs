@@ -9,6 +9,8 @@ public class Falloff : MonoBehaviour {
     public Transform explosionPrefab;
     public AudioClip explosionSound;
     public float explosionVolume = 1f;
+    [Range(0, 1)]
+    public float cameraTrauma = 0.6f;
 
 	private Vector3 originalPosition;
     private PlayerMovement m;
@@ -58,6 +60,7 @@ public class Falloff : MonoBehaviour {
             if (explosionSound)
             {
                 AudioSource.PlayClipAtPoint(explosionSound, Camera.main.transform.position, explosionVolume);
+                Camera.main.GetComponent<NickShake>().AddTrauma(cameraTrauma);
             }
         }
 
