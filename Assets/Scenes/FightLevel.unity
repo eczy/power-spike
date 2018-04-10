@@ -7333,6 +7333,11 @@ Prefab:
       propertyPath: cameraTrauma
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 23215557116152140, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6a39789ce4eac744993b5ffffc6e7520, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -8490,6 +8495,11 @@ Prefab:
       propertyPath: cameraTrauma
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 23212613319762468, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ec639f9bb3ba34698c8547e151e0d8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
