@@ -9,9 +9,11 @@ public class BatteryCollector : MonoBehaviour {
 	float currentBuffer = 0.0f;
 	Battery thisBattery = null;
 	Player player;
+	PlayerMovement movement;
 
 	void Start() {
 		player = GetComponent<Player> ();
+		movement = GetComponent<PlayerMovement>();
 	}
 
 	void Update() {
@@ -20,6 +22,8 @@ public class BatteryCollector : MonoBehaviour {
 		} else {
 			currentBuffer -= Time.deltaTime;
 		}
+
+		movement.maxSpeed = thisBattery == null ? 10 : 7.5f;
 	}
 
 	void OnTriggerStay(Collider other)
