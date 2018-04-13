@@ -12,16 +12,25 @@ public class ScoreManager : MonoBehaviour {
 	public Transform lightning_middle;
 	public AudioClip score_change_sound;
 	public float score_change_volume = 1f;
+    public bool frantic = false;
+    public float frantic_speed = 1f;
 
 	int prev_blue = 0;
 	int prev_red = 0;
 
-	
-	// Update is called once per frame
-	void Update () {
+    private void Start()
+    {
+        if (frantic)
+            StartCoroutine(FranticMode());
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if (frantic)
+            return;
+
 		int red = red_batteries.GetBatteries ();
 		int blue = blue_batteries.GetBatteries ();
-		int max = (red_batteries.maxBatteries);
 
 		if (red > prev_red || blue > prev_blue) {
 			Camera.main.GetComponent<NickShake> ().AddTrauma (0.7f);
@@ -29,11 +38,21 @@ public class ScoreManager : MonoBehaviour {
 		}
 		float p;
 		if (red > blue)
-			p = (float)red / max;
+			p = (float)red / (red+blue);
 		else
-			p = 1f - (float)blue / max;
+			p = 1f - (float)blue / (red+blue);
 		lightning_middle.position = Vector3.Lerp (red_start.position, blue_start.position, p);
 		prev_red = red;
 		prev_blue = blue;
 	}
+
+    IEnumerator FranticMode()
+    {
+        while (true)
+        {
+            float r = Random.Range(0f, 1f);
+            lightning_middle.position = Vector3.Lerp(lightning_middle.position, Vector3.Lerp(red_start.position, blue_start.position, r), Time.deltaTime * frantic_speed);
+            yield return null;
+        }
+    }
 }

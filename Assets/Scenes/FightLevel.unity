@@ -2963,6 +2963,11 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 114666808084291390, guid: 3433e7b0af85e4b21a5a502e76d68e2e,
+        type: 2}
+      propertyPath: score_change_volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3433e7b0af85e4b21a5a502e76d68e2e, type: 2}
   m_IsPrefabParent: 0
@@ -4392,6 +4397,11 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 2024812947}
+    - target: {fileID: 114809830114129346, guid: a804a1ff33d69489097a1f87ec42e62e,
+        type: 2}
+      propertyPath: cameraTrauma
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
   m_IsPrefabParent: 0
@@ -4456,6 +4466,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &863603284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 149616241}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 863603285}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &863603285
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 149616241}
+  m_GameObject: {fileID: 863603284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1320071287}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &873283551
 GameObject:
@@ -7346,6 +7384,16 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 2024812947}
+    - target: {fileID: 114791786886199078, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: cameraTrauma
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 23215557116152140, guid: c91802a91986f4458823fc935abda372,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6a39789ce4eac744993b5ffffc6e7520, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c91802a91986f4458823fc935abda372, type: 2}
   m_IsPrefabParent: 0
@@ -7582,6 +7630,11 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 1810362763}
+    - target: {fileID: 114691051627482394, guid: 9aee6835825594dd98ac5776123bef98,
+        type: 2}
+      propertyPath: cameraTrauma
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9aee6835825594dd98ac5776123bef98, type: 2}
   m_IsPrefabParent: 0
@@ -8493,6 +8546,16 @@ Prefab:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 1810362763}
+    - target: {fileID: 114608623834035550, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: cameraTrauma
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 23212613319762468, guid: 6dac0a426aa224a379b11f943508ee29,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10ec639f9bb3ba34698c8547e151e0d8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dac0a426aa224a379b11f943508ee29, type: 2}
   m_IsPrefabParent: 0
@@ -9821,7 +9884,7 @@ Prefab:
     - target: {fileID: 224824106254450548, guid: 8910ed65752a94565a7a59a8ed67ca00,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -76.99994
+      value: -77
       objectReference: {fileID: 0}
     - target: {fileID: 224824106254450548, guid: 8910ed65752a94565a7a59a8ed67ca00,
         type: 2}
@@ -10302,6 +10365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 180
   precount: 3
+  precount_only: 0
   countDown: {fileID: 1774849441}
   warnings: {fileID: 394414084}
   warningColor: {r: 1, g: 0.51666665, b: 0, a: 1}
