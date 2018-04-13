@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class ResetStats : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	private void Start () {
+		StatManager.ResetAllStats();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

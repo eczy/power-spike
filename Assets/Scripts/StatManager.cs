@@ -16,17 +16,17 @@ public class StatManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        if (GetComponent<ResetStats>())
-        {
-            ResetAllStats();
-        }
-
         DontDestroyOnLoad(gameObject);
     }
 
-    private void ResetAllStats()
+    public static void ResetAllStats()
     {
-        foreach (StatsToUI stat in GetComponentsInChildren<StatsToUI>()) {
+        if (!original)
+        {
+            return;
+        }
+        
+        foreach (StatsToUI stat in original.GetComponentsInChildren<StatsToUI>()) {
             stat.ResetStats();
         }
     }
