@@ -9,8 +9,10 @@ public class ControllerAssigner : MonoBehaviour {
     public Player[] players;
     public int requiredPlayers = 4;
     public string nextScene;
+    public float deviceTimeout = 10f;
 
-    Dictionary<int, bool> isDeviceActive;
+    Dictionary<int, float> deviceActiveTime;
+    Dictionary<int, bool> deviceActive;
     Animator cameraAnimation;
     DynamicCamera cameraFollow;
 
@@ -42,7 +44,7 @@ public class ControllerAssigner : MonoBehaviour {
         {
             InputDevice device = InputManager.Devices[i];
 
-            if (!isDeviceActive[i] && device.Action1.WasPressed)
+            if (!IsDeviceActive(i) && device.Action1.WasPressed)
             {
                 AssignDevicePlayer(i);
             }
@@ -52,7 +54,7 @@ public class ControllerAssigner : MonoBehaviour {
     void AssignDevicePlayer(int deviceNum)
     {
         Debug.Log("Player has joined");
-        isDeviceActive[deviceNum] = true;
+        SetDeviceActive(deviceNum);
         players[activePlayers].player_number = deviceNum;
         activePlayers++;
     }
@@ -60,7 +62,7 @@ public class ControllerAssigner : MonoBehaviour {
     void UnassignDevicePlayer(int playerNum)
     {
         Debug.Log("Player has left");
-        isDeviceActive[players[playerNum].player_number] = false;
+        SetDeviceInactive(players[playerNum].player_number);
         players[playerNum].player_number = players.Length + 1;
         activePlayers--;
     }
@@ -71,12 +73,10 @@ public class ControllerAssigner : MonoBehaviour {
         {
             int playerNum = player.player_number;
 
-
             if (playerNum < InputManager.Devices.Count)
             {
                 UpdatePlayer(playerNum);
             }
-
         }
     }
 
@@ -86,9 +86,18 @@ public class ControllerAssigner : MonoBehaviour {
 
         InputDevice device = InputManager.Devices[playerNum];
 
-        if (isDeviceActive[playerNum] && device.Action4.WasPressed)
+        if (device.AnyButton.WasPressed || device.LeftStickX != 0.0f)
+        {
+            SetDeviceActive(playerNum);
+        }
+
+        if (IsDeviceActive(playerNum) && (device.Action4.WasPressed || deviceActiveTime[playerNum] <= 0.0f))
         {
             UnassignDevicePlayer(playerNum);
+        }
+        else
+        {
+            deviceActiveTime[playerNum] -= Time.deltaTime;
         }
     }
 
@@ -110,10 +119,30 @@ public class ControllerAssigner : MonoBehaviour {
 
     void InitializeDevices()
     {
-        isDeviceActive = new Dictionary<int, bool>();
+        deviceActiveTime = new Dictionary<int, float>();
+        deviceActive = new Dictionary<int, bool>();
+        
         for (int i = 0; i < InputManager.Devices.Count; i++)
         {
-            isDeviceActive[i] = false;
+            deviceActive[i] = false;
+            deviceActiveTime[i] = 0.0f;
         }
+    }
+
+    bool IsDeviceActive(int deviceNum)
+    {
+        return deviceActive[deviceNum];
+    }
+
+    void SetDeviceActive(int deviceNum)
+    {
+        deviceActive[deviceNum] = true;
+        deviceActiveTime[deviceNum] = deviceTimeout;
+    }
+
+    void SetDeviceInactive(int deviceNum)
+    {
+        deviceActive[deviceNum] = false;
+        deviceActiveTime[deviceNum] = 0.0f;
     }
 }
