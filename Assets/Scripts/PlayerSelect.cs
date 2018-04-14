@@ -22,6 +22,7 @@ public class PlayerSelect : MonoBehaviour {
     private int[] selections;
     private bool selectionDone;
     private Color originalColor;
+    public int numPlayers = 4;
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class PlayerSelect : MonoBehaviour {
         }
 
         // Stop player selection when everyone hits start
-        bool selectionMade = selections.Count(t => t != -1) == 4;
+        bool selectionMade = selections.Count(t => t != -1) == numPlayers;
         if (selectionMade && InputManager.ActiveDevice.MenuWasPressed)
         {
 			Finish();
