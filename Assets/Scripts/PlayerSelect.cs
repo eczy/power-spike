@@ -59,8 +59,8 @@ public class PlayerSelect : MonoBehaviour {
             UpdateDevice(i);
         }
 
-        // Stop player selection when a device presses start with at least one player selected
-        bool selectionMade = selections.Count(t => t != -1) > 0;
+        // Stop player selection when everyone hits start
+        bool selectionMade = selections.Count(t => t != -1) == 4;
         if (selectionMade && InputManager.ActiveDevice.MenuWasPressed)
         {
 			Finish();
