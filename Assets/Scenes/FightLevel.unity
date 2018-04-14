@@ -10817,6 +10817,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -65.90039
       objectReference: {fileID: 0}
+    - target: {fileID: 114131634455190428, guid: d6c73a0a8ab3f34439f28eb6d924a4f7,
+        type: 2}
+      propertyPath: sceneNames.Array.data[1]
+      value: DynamicMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6c73a0a8ab3f34439f28eb6d924a4f7, type: 2}
   m_IsPrefabParent: 0
