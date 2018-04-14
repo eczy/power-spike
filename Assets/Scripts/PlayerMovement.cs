@@ -93,4 +93,9 @@ public class PlayerMovement : MonoBehaviour {
 			groundedBuffer = maxGroundedBuffer;
 		}
 	}
+
+    public bool IsGrounded()
+    {
+        return groundedBuffer > 0;
+    }
 }
