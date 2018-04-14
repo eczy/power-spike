@@ -840,7 +840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d40a6baef5847f2bae1336973122b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibility_time: 0
+  punchInvincibilityTime: 0
+  chargeInvincibilityTime: 0
+  deathInvincibilityTime: 1
   traumaOnHit: 0.2
 --- !u!114 &114511934239093774
 MonoBehaviour:
@@ -887,6 +889,7 @@ MonoBehaviour:
     type: 2}
   explosionSound: {fileID: 8300000, guid: 6d3eeb5fc4bad664dbd9476ac9c3d63d, type: 3}
   explosionVolume: 1
+  cameraTrauma: 0.7
 --- !u!114 &114919319220671190
 MonoBehaviour:
   m_ObjectHideFlags: 1

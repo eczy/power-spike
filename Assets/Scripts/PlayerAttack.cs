@@ -70,22 +70,21 @@ public class PlayerAttack : MonoBehaviour {
 		Collider[] colliders = Physics.OverlapSphere(transform.position, charge_radius);
 		foreach (Collider hit in colliders)
 		{
-			if (hit.GetComponent<Charge>() == null || hit.gameObject == this.gameObject || hit.transform.IsChildOf(this.transform))
+			if (hit.GetComponent<Charge>() == null || hit.gameObject == this.gameObject ||
+			    hit.transform.IsChildOf(this.transform))
+			{
 				continue;
+			}
 			
-			Rigidbody rb = hit.GetComponent<Rigidbody>();
-
-            Team hit_team = hit.GetComponent<Player>().team;
+            Team hitTeam = hit.GetComponent<Player>().team;
             Team team = p.team;
 
-            int multiplier = 0;
-            if (hit_team == team)
-                multiplier = -1;
-            else
-                multiplier = 1;
+			int multiplier = hitTeam == team ? -1 : 1;
 
-			if (rb != null) {
-				rb.AddExplosionForce (charge_force * multiplier, transform.position, 0, 0.0f, ForceMode.Impulse);
+			Hitbox hitbox = hit.GetComponent<Hitbox>();
+			if (hitbox)
+			{
+				hitbox.ChargeAttackHit(transform.position, multiplier * charge_force);
 			}
 		}
 
