@@ -9264,7 +9264,7 @@ MonoBehaviour:
   - {fileID: 2424846}
   requiredPlayers: 4
   nextScene: lab_tutorial
-  deviceTimeout: 3
+  deviceTimeout: 10
 --- !u!4 &1533339675
 Transform:
   m_ObjectHideFlags: 0
