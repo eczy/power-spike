@@ -24,6 +24,13 @@ public class PlayerSelect : MonoBehaviour {
     private Color originalColor;
     public int numPlayers = 4;
 
+    public GameObject redPos;
+    public GameObject redNeg;
+    public GameObject bluePos;
+    public GameObject blueNeg;
+
+    private int[] playerSelectedQuadrants;
+
     private void Start()
     {
 		foreach (Player player in players)
@@ -38,12 +45,19 @@ public class PlayerSelect : MonoBehaviour {
 			selections[i] = -1;
 		}
 
-		if (autoSelect) {
-			for (int i = 0; i < selections.Length; i++) {
-				selections [i] = i;
-			}
-			Finish();
-		}
+        if (autoSelect)
+        {
+            for (int i = 0; i < selections.Length; i++)
+            {
+                selections[i] = i;
+            }
+            Finish();
+        }
+        playerSelectedQuadrants = new int[players.Length];
+        for (int i = 0; i < players.Length; i++)
+        {
+            playerSelectedQuadrants[i] = -1;
+        }
 	}
 
     private void Update()
@@ -133,6 +147,79 @@ public class PlayerSelect : MonoBehaviour {
         Image buttonImage = playerButtons[deviceIndex].GetComponent<Image>();
         originalColor = buttonImage.color;
         buttonImage.color = selectedColor;
+
+        playerSelectedQuadrants[deviceIndex] = quadrant;
+        ChangeModelToUniqueBattery(deviceIndex, quadrant);
+    }
+
+    private void ChangeModelToUniqueBattery(int deviceIndex, int quadrant)
+    {
+        Transform parent = playerButtons[deviceIndex].transform;
+        Transform battery = playerButtons[deviceIndex].transform.Find("battery");
+
+        Image oldColor;
+        GameObject newModel;
+        // Top Left
+        if (quadrant == 0)
+        {
+            newModel = Instantiate(redPos, parent);
+            oldColor = GameObject.Find("TLArea").gameObject.GetComponent<Image>();
+        }
+        // Bottom Left
+        else if (quadrant == 1)
+        {
+            newModel = Instantiate(redNeg, parent);
+            oldColor = GameObject.Find("BLArea").gameObject.GetComponent<Image>();
+        }
+        // Top Right
+        else if (quadrant == 2)
+        {
+            newModel = Instantiate(bluePos, parent);
+            oldColor = GameObject.Find("TRArea").gameObject.GetComponent<Image>();
+        }
+        else
+        {
+            newModel = Instantiate(blueNeg, parent);
+            oldColor = GameObject.Find("BRArea").gameObject.GetComponent<Image>();
+        }
+        Debug.Log(oldColor);
+        oldColor.color = new Color(oldColor.color.r, oldColor.color.g, oldColor.color.b, 0.60f);
+        newModel.transform.localScale = battery.localScale;
+        battery.gameObject.SetActive(false);
+
+    }
+
+    private void ChangeModelToUnchosenBattery(int deviceIndex, int quadrant)
+    {
+        Transform player = playerButtons[deviceIndex].transform;
+        Image oldColor;
+
+        // Top Left
+        if (quadrant == 0)
+        {
+            Destroy(player.Find("RedPosModel(Clone)").gameObject);
+            oldColor = GameObject.Find("TLArea").gameObject.GetComponent<Image>();
+        }
+        // Bottom Left
+        else if (quadrant == 1)
+        {
+            Destroy(player.Find("RedNegModel(Clone)").gameObject);
+            oldColor = GameObject.Find("BLArea").gameObject.GetComponent<Image>();
+        }
+        // Top Right
+        else if (quadrant == 2)
+        {
+            Destroy(player.Find("BluePosModel(Clone)").gameObject);
+            oldColor = GameObject.Find("TRArea").gameObject.GetComponent<Image>();
+        }
+        else
+        {
+            Destroy(player.Find("BlueNegModel(Clone)").gameObject);
+            oldColor = GameObject.Find("BRArea").gameObject.GetComponent<Image>();
+        }
+
+        oldColor.color = new Color(oldColor.color.r, oldColor.color.g, oldColor.color.b, 0.9f);
+        player.Find("battery").gameObject.SetActive(true);
     }
 
     private void UnlockPlayer(int deviceIndex)
@@ -141,6 +228,8 @@ public class PlayerSelect : MonoBehaviour {
         selections[deviceIndex] = -1;
 
         playerButtons[deviceIndex].GetComponent<Image>().color = originalColor;
+        ChangeModelToUnchosenBattery(deviceIndex, playerSelectedQuadrants[deviceIndex]);
+        playerSelectedQuadrants[deviceIndex] = -1;
     }
 
     private bool PlayerSelected(int player)
