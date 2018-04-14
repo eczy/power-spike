@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hitbox : MonoBehaviour {
+[RequireComponent(typeof(Rigidbody))]
+public class Hitbox : MonoBehaviour
+{
 
-    public float invincibility_time = 1f;
+	public float punchInvincibilityTime;
+	public float chargeInvincibilityTime;
+	public float deathInvincibilityTime;
 
 	[Range(0,1)]
 	public float traumaOnHit = 0.2f;
 
-    bool invincible = false;
+	private Rigidbody rb;
+	private bool invincible;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	private void Start ()
+	{
+		rb = GetComponent<Rigidbody>();
 	}
 
     private void OnCollisionEnter(Collision collision)
@@ -28,11 +28,15 @@ public class Hitbox : MonoBehaviour {
 
     private void OnCollisionStay(Collision collision)
     {
-        if (invincible)
+	    if (invincible)
+	    {
             return;
-        else if (invincibility_time > 0f)
-            StartCoroutine(IFrames());
-		Health health = GetComponent<Health> ();
+	    }
+	    if (punchInvincibilityTime > 0) {
+			StartCoroutine(MakeInvincible(punchInvincibilityTime));
+		}
+	    
+	    Health health = GetComponent<Health> ();
         Hurtbox hurt = collision.collider.GetComponent<Hurtbox>();
         BatteryCollector collect = GetComponent<BatteryCollector>();
         Knockback knock = GetComponent<Knockback>();
@@ -55,10 +59,30 @@ public class Hitbox : MonoBehaviour {
         }
     }
 
-    IEnumerator IFrames()
+    private IEnumerator MakeInvincible(float duration)
     {
         invincible = true;
-        yield return new WaitForSeconds(invincibility_time);
+        yield return new WaitForSeconds(duration);
         invincible = false;
     }
+
+	public void ChargeAttackHit(Vector3 origin, float force)
+	{
+		if (invincible) return;
+		
+		rb.AddExplosionForce (force, origin, 0, 0.0f, ForceMode.Impulse);
+		
+		if (chargeInvincibilityTime > 0)
+		{
+			StartCoroutine(MakeInvincible(chargeInvincibilityTime));
+		}
+	}
+
+	public void PlayerRespawn()
+	{
+		if (deathInvincibilityTime > 0)
+		{
+			StartCoroutine(MakeInvincible(deathInvincibilityTime));
+		}
+	}
 }

@@ -71,6 +71,12 @@ public class Falloff : MonoBehaviour {
 		isRespawning = false;
 
 		SetComponentsEnabled(true);
+		Hitbox hitbox = GetComponent<Hitbox>();
+
+		if (hitbox)
+		{
+			hitbox.PlayerRespawn();
+		}
 		
 		transform.forward = playerSpawn.forward;
 	}
