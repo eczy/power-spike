@@ -53,20 +53,19 @@ public class ControllerAssigner : MonoBehaviour {
 
     void ManagePlayers()
     {
-        for (int i = 0; i < players.Length; i++)
+        foreach (Player player in players)
         {
-            Player player = players[i];
-            int deviceNum = player.player_number;
-
-            if (deviceNum < InputManager.Devices.Count)
+            if (player.player_number < InputManager.Devices.Count)
             {
-                UpdatePlayer(deviceNum, i);
+                UpdatePlayer(player);
             }
         }
     }
 
-    void UpdatePlayer(int deviceNum, int playerNum)
+    void UpdatePlayer(Player activePlayer)
     {
+        int deviceNum = activePlayer.player_number;
+
         if (deviceNum > InputManager.Devices.Count) return;
 
         InputDevice device = InputManager.Devices[deviceNum];
@@ -78,7 +77,7 @@ public class ControllerAssigner : MonoBehaviour {
 
         if (IsDeviceActive(deviceNum) && (device.Action4.WasPressed || deviceActiveTime[deviceNum] <= 0.0f))
         {
-            UnassignDevicePlayer(deviceNum, playerNum);
+            UnassignDevicePlayer(deviceNum, activePlayer);
         }
         else
         {
@@ -88,18 +87,17 @@ public class ControllerAssigner : MonoBehaviour {
 
     void AssignDevicePlayer(int deviceNum)
     {
-        Debug.Log("Player has joined");
-        SetDeviceActive(deviceNum);
         Player newPlayer = FindFirstInactivePlayer();
+
+        SetDeviceActive(deviceNum);
         newPlayer.player_number = deviceNum;
         activePlayers++;
     }
 
-    void UnassignDevicePlayer(int deviceNum, int playerNum)
+    void UnassignDevicePlayer(int deviceNum, Player removedPlayer)
     {
-        Debug.Log("Player has left");
         SetDeviceInactive(deviceNum);
-        players[playerNum].player_number = players.Length + 1;
+        removedPlayer.player_number = players.Length + 1;
         activePlayers--;
     }
 
