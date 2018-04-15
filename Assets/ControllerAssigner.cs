@@ -51,54 +51,56 @@ public class ControllerAssigner : MonoBehaviour {
         }
     }
 
-    void AssignDevicePlayer(int deviceNum)
-    {
-        Debug.Log("Player has joined");
-        SetDeviceActive(deviceNum);
-        players[activePlayers].player_number = deviceNum;
-        activePlayers++;
-    }
-
-    void UnassignDevicePlayer(int playerNum)
-    {
-        Debug.Log("Player has left");
-        SetDeviceInactive(players[playerNum].player_number);
-        players[playerNum].player_number = players.Length + 1;
-        activePlayers--;
-    }
-
     void ManagePlayers()
     {
-        foreach (Player player in players)
+        for (int i = 0; i < players.Length; i++)
         {
-            int playerNum = player.player_number;
+            Player player = players[i];
+            int deviceNum = player.player_number;
 
-            if (playerNum < InputManager.Devices.Count)
+            if (deviceNum < InputManager.Devices.Count)
             {
-                UpdatePlayer(playerNum);
+                UpdatePlayer(deviceNum, i);
             }
         }
     }
 
-    void UpdatePlayer(int playerNum)
+    void UpdatePlayer(int deviceNum, int playerNum)
     {
-        if (playerNum > InputManager.Devices.Count) return;
+        if (deviceNum > InputManager.Devices.Count) return;
 
-        InputDevice device = InputManager.Devices[playerNum];
+        InputDevice device = InputManager.Devices[deviceNum];
 
         if (device.AnyButton.WasPressed || device.LeftStickX != 0.0f)
         {
-            SetDeviceActive(playerNum);
+            SetDeviceActive(deviceNum);
         }
 
-        if (IsDeviceActive(playerNum) && (device.Action4.WasPressed || deviceActiveTime[playerNum] <= 0.0f))
+        if (IsDeviceActive(deviceNum) && (device.Action4.WasPressed || deviceActiveTime[deviceNum] <= 0.0f))
         {
-            UnassignDevicePlayer(playerNum);
+            UnassignDevicePlayer(deviceNum, playerNum);
         }
         else
         {
-            deviceActiveTime[playerNum] -= Time.deltaTime;
+            deviceActiveTime[deviceNum] -= Time.deltaTime;
         }
+    }
+
+    void AssignDevicePlayer(int deviceNum)
+    {
+        Debug.Log("Player has joined");
+        SetDeviceActive(deviceNum);
+        Player newPlayer = FindFirstInactivePlayer();
+        newPlayer.player_number = deviceNum;
+        activePlayers++;
+    }
+
+    void UnassignDevicePlayer(int deviceNum, int playerNum)
+    {
+        Debug.Log("Player has left");
+        SetDeviceInactive(deviceNum);
+        players[playerNum].player_number = players.Length + 1;
+        activePlayers--;
     }
 
     void ManageCamera()
@@ -144,5 +146,18 @@ public class ControllerAssigner : MonoBehaviour {
     {
         deviceActive[deviceNum] = false;
         deviceActiveTime[deviceNum] = 0.0f;
+    }
+
+    Player FindFirstInactivePlayer()
+    {
+        foreach (Player player in players)
+        {
+            if (player.player_number > players.Length)
+            {
+                return player;
+            }
+        }
+
+        return null;
     }
 }
