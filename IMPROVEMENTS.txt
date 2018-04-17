@@ -1,32 +1,21 @@
-IMPROVEMENTS:
-=============
-- HARD pivot; it's like a whole new game
-- Players don't fall through the map anymore!!!
-- Symmetric 2v2 game instead of an asymmetric 3v1 game
-- 2D instead of 3D
-- Player models are back to capsules, but we are actively looking for new character models that aren't Unity primitives
-- Viking (kinda) theme -> Electricity/tech theme
-- All players now have same abilities; only their "charge" is different which affects only one ability
-- Now more of a capture the flag type of game than defend the goal/kill the boss game
-- Player selection functionality
+IMPROVEMENTS FOR GOLD:
+Most of the iteration this week was done on professionalism and game showcase readiness. We experimented with adjustments to battery count, slows, and punching rework,
+but it was too risky to use when there is no time to playtest it.
 
-IMPROVEMENTS SINCE GAMEJAM (@austin and thomas):
-- You can no longer pick up batteries from your own pile
-- Trail renderer on red players are now red and not blue
-- Red respawner is oriented correctly now
-- Music loops on main menu and in fighting level
-- You can now play without 4 players being selected (at least one needs to be selected though). Unselected players do not have a controller and do nothing.
+We got a lot of feed back about the tutorial level and we tried to address that feedback this week.
+We brought the text boxes into each players individual box.
+We brought the boxes closer together to make it easier to see your player.
+Added player models to the players select screen.
 
-IMPROVEMENTS FOR ALPHA:
-- Added tutorial level for lots of guidance because that was one of our largest complaints
-- Added stats screen for end of game to give players closure
-- Added one way platforms to improve player mobility
-- Added game timer to limit game time and overtime mechanic to resolve ties
-- Added charges above players heads
-- Added pause screen.
+We completely redid the main menu screen to make it more appropriate for a game showcase environment.
+We made it so the start screen loops a cinematic that pans around the main level and players.
+Players have a chance to grab a controller and ready up before the game starts, they can also leave or timeout on this screen.
 
-IMPROVEMENTS FOR BETA:
-- Added scene transitions
-- Improved UI professional appearance
-- Limited overtime to only happen on ties
-- Added lighting effects to lighning and score
+Juice:
+Jump animation
+Made players more distinguishable because the color scheme last week was pretty similar.
+Added bloom to lightning between players.
+Added end game animation instead of just an abrupt fade to black.
+Added IFrames on player respawn.
+
+We tried to change the score screen to make it easier to identify your player now that we dont have charges anymore.
