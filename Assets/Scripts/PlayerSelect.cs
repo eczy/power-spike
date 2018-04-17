@@ -76,7 +76,7 @@ public class PlayerSelect : MonoBehaviour {
 
         // Stop player selection when everyone hits start
         bool selectionMade = selections.Count(t => t != -1) == numPlayers;
-        if (selectionMade && InputManager.ActiveDevice.MenuWasPressed)
+        if (selectionMade)
         {
 			Finish();
         }
@@ -102,7 +102,10 @@ public class PlayerSelect : MonoBehaviour {
         }
         else
         {
-            playerButtons[deviceIndex].localPosition = new Vector3(device.LeftStickX, device.LeftStickY, 0) * radius;
+            float zPos = playerButtons[deviceIndex].localPosition.z;
+            Vector3 newPosition = new Vector3(device.LeftStickX, device.LeftStickY, 0) * radius;
+            newPosition.z = zPos;
+            playerButtons[deviceIndex].localPosition = newPosition;
         }
 
     }

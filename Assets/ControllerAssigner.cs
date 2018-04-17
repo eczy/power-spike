@@ -19,6 +19,22 @@ public class ControllerAssigner : MonoBehaviour {
     int activePlayers = 0;
     bool playersActive = false;
 
+    private void Awake()
+    {
+        PlayerAssignment assigns = GameObject.FindObjectOfType<PlayerAssignment>();
+
+        if (assigns)
+        {
+            foreach (Player player in players)
+            {
+                Team team = player.team;
+                int charge = player.GetComponent<Charge>().charge;
+
+                assigns.StorePlayerAssignment(team, charge, players.Length + 1);
+            }
+        }
+    }
+
     void Start()
     {
         InitializeDevices();
