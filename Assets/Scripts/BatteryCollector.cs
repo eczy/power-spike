@@ -22,8 +22,6 @@ public class BatteryCollector : MonoBehaviour {
 		} else {
 			currentBuffer -= Time.deltaTime;
 		}
-
-		movement.maxSpeed = thisBattery == null ? 10 : 7.5f;
 	}
 
 	void OnTriggerStay(Collider other)

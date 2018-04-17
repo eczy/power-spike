@@ -425,6 +425,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1836290090692342, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a804a1ff33d69489097a1f87ec42e62e, type: 2}
   m_IsPrefabParent: 0
@@ -465,7 +469,7 @@ MonoBehaviour:
   redPlayers: {fileID: 1269507719}
   bluePlayers: {fileID: 1871927995}
   timeOnStatScreen: 10
-  mainMenuScene: MainMenu
+  mainMenuScene: DynamicMenu
 --- !u!4 &60708765
 Transform:
   m_ObjectHideFlags: 0
@@ -6333,6 +6337,81 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959071877595440, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Text
+      value: White Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114086264497602146, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Text
+      value: Black Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114396011763638658, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114396011763638658, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499447885063210, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499447885063210, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114499447885063210, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Text
+      value: +
+      objectReference: {fileID: 0}
+    - target: {fileID: 114631128040148430, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Text
+      value: White Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034368943521806, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Text
+      value: Black Hat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118693974657502, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Text
+      value: +
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118693974657502, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118693974657502, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189038036455714, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189038036455714, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189038036455714, guid: 65ecaf38455452b46b6f91ba9aa1be81,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65ecaf38455452b46b6f91ba9aa1be81, type: 2}
