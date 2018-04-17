@@ -175,7 +175,7 @@ MonoBehaviour:
   - {fileID: 114101516126631826}
   sceneNames:
   - 
-  - MainMenu
+  - DynamicMenu
   inputDelay: 0.2
   activeColor: {r: 1, g: 0.522, b: 0, a: 0.809}
   lerpDuration: 0.3
